@@ -1,0 +1,48 @@
+[
+  {
+    "input": {
+      "anomaly_type": "vibration_spike",
+      "vibration_zscore": 3.1,
+      "section_type": "bridge",
+      "speed_kmph": 110,
+      "pattern_match": "sustained_trend"
+    },
+    "output": {
+      "priority": 4,
+      "confidence_pct": 92,
+      "reasoning": "High vibration on bridge at 110kmph with sustained trend — immediate human review required",
+      "key_factors": ["bridge_section", "high_speed", "sustained_trend"]
+    }
+  },
+  {
+    "input": {
+      "anomaly_type": "vibration_spike",
+      "vibration_zscore": 2.6,
+      "section_type": "open_track",
+      "speed_kmph": 45,
+      "pattern_match": "isolated_spike"
+    },
+    "output": {
+      "priority": 2,
+      "confidence_pct": 78,
+      "reasoning": "Isolated spike on open track at low speed — schedule maintenance within 7 days",
+      "key_factors": ["open_track", "low_speed", "isolated_spike"]
+    }
+  },
+  {
+    "input": {
+      "anomaly_type": "combined",
+      "vibration_zscore": 3.4,
+      "temperature_zscore": 3.1,
+      "section_type": "tunnel",
+      "speed_kmph": 95,
+      "pattern_match": "multi_sensor_event"
+    },
+    "output": {
+      "priority": 5,
+      "confidence_pct": 96,
+      "reasoning": "Combined vibration and temperature anomaly in tunnel at high speed — critical safety risk",
+      "key_factors": ["tunnel_section", "combined_anomaly", "high_speed", "multi_sensor"]
+    }
+  }
+]

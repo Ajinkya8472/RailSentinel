@@ -1,0 +1,50 @@
+[
+  {
+    "input": {
+      "vibration": 89.2,
+      "temperature": 71.0,
+      "vibration_zscore": 3.1,
+      "temperature_zscore": 0.4,
+      "section_type": "bridge",
+      "speed_kmph": 110
+    },
+    "output": {
+      "anomaly_confirmed": true,
+      "anomaly_type": "vibration_spike",
+      "affected_sensors": ["vibration"],
+      "detector_notes": "Vibration 3.1 sigma above baseline on bridge section at high speed"
+    }
+  },
+  {
+    "input": {
+      "vibration": 55.0,
+      "temperature": 71.0,
+      "vibration_zscore": 0.8,
+      "temperature_zscore": 0.3,
+      "section_type": "open_track",
+      "speed_kmph": 60
+    },
+    "output": {
+      "anomaly_confirmed": false,
+      "anomaly_type": "none",
+      "affected_sensors": [],
+      "detector_notes": "Reading within normal range — statistical noise"
+    }
+  },
+  {
+    "input": {
+      "vibration": 91.0,
+      "temperature": 93.0,
+      "vibration_zscore": 3.4,
+      "temperature_zscore": 3.1,
+      "section_type": "tunnel",
+      "speed_kmph": 95
+    },
+    "output": {
+      "anomaly_confirmed": true,
+      "anomaly_type": "combined",
+      "affected_sensors": ["vibration", "temperature"],
+      "detector_notes": "Both vibration and temperature exceed thresholds in tunnel section"
+    }
+  }
+]
