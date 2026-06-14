@@ -1,0 +1,284 @@
+[
+  {
+    "id": "T001",
+    "name": "Rajdhani Express",
+    "number": "12951",
+    "from": "Mumbai Central",
+    "to": "New Delhi",
+    "passenger_capacity": 1200,
+    "waypoints": [
+      {"lat": 18.9696, "lng": 72.8195, "station": "Mumbai Central"},
+      {"lat": 19.1724, "lng": 72.9570, "station": "Borivali"},
+      {"lat": 20.0059, "lng": 73.7700, "station": "Surat"},
+      {"lat": 22.3072, "lng": 73.1812, "station": "Vadodara"},
+      {"lat": 23.0225, "lng": 72.5714, "station": "Ahmedabad"},
+      {"lat": 24.5854, "lng": 73.7125, "station": "Udaipur"},
+      {"lat": 25.4484, "lng": 74.6400, "station": "Chittorgarh"},
+      {"lat": 26.9124, "lng": 75.7873, "station": "Jaipur"},
+      {"lat": 27.5039, "lng": 76.9523, "station": "Alwar"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"}
+    ]
+  },
+  {
+    "id": "T002",
+    "name": "Chennai Mail",
+    "number": "12163",
+    "from": "Chennai Central",
+    "to": "Mumbai CST",
+    "passenger_capacity": 900,
+    "waypoints": [
+      {"lat": 13.0827, "lng": 80.2707, "station": "Chennai Central"},
+      {"lat": 12.9716, "lng": 79.1590, "station": "Vellore"},
+      {"lat": 12.8436, "lng": 78.6570, "station": "Krishnarajapuram"},
+      {"lat": 13.3379, "lng": 77.1173, "station": "Tumkur"},
+      {"lat": 14.4426, "lng": 75.7324, "station": "Davangere"},
+      {"lat": 15.3647, "lng": 75.1240, "station": "Hubli"},
+      {"lat": 15.8497, "lng": 74.4977, "station": "Londa"},
+      {"lat": 15.4909, "lng": 73.8278, "station": "Goa (Madgaon)"},
+      {"lat": 16.7049, "lng": 74.2433, "station": "Kolhapur"},
+      {"lat": 18.5204, "lng": 73.8567, "station": "Pune"},
+      {"lat": 18.9388, "lng": 72.8356, "station": "Mumbai CST"}
+    ]
+  },
+  {
+    "id": "T003",
+    "name": "Howrah Rajdhani",
+    "number": "12301",
+    "from": "Howrah",
+    "to": "New Delhi",
+    "passenger_capacity": 1100,
+    "waypoints": [
+      {"lat": 22.5839, "lng": 88.3424, "station": "Howrah"},
+      {"lat": 23.5204, "lng": 87.3119, "station": "Asansol"},
+      {"lat": 23.8134, "lng": 86.4415, "station": "Dhanbad"},
+      {"lat": 24.6637, "lng": 85.5310, "station": "Gaya"},
+      {"lat": 25.5941, "lng": 85.1376, "station": "Patna"},
+      {"lat": 25.4484, "lng": 83.0302, "station": "Varanasi"},
+      {"lat": 25.4358, "lng": 81.8463, "station": "Allahabad"},
+      {"lat": 26.8467, "lng": 80.9462, "station": "Lucknow"},
+      {"lat": 27.1767, "lng": 78.0081, "station": "Agra"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"}
+    ]
+  },
+  {
+    "id": "T004",
+    "name": "Karnataka Express",
+    "number": "12627",
+    "from": "Bangalore",
+    "to": "New Delhi",
+    "passenger_capacity": 950,
+    "waypoints": [
+      {"lat": 12.9716, "lng": 77.5946, "station": "Bangalore"},
+      {"lat": 14.4673, "lng": 77.8178, "station": "Anantapur"},
+      {"lat": 14.6819, "lng": 77.5933, "station": "Guntakal"},
+      {"lat": 15.8281, "lng": 78.0374, "station": "Kurnool"},
+      {"lat": 17.3850, "lng": 78.4867, "station": "Hyderabad"},
+      {"lat": 17.9784, "lng": 79.5941, "station": "Warangal"},
+      {"lat": 19.0760, "lng": 80.4400, "station": "Jagdalpur"},
+      {"lat": 21.2514, "lng": 81.6296, "station": "Raipur"},
+      {"lat": 23.1815, "lng": 79.9864, "station": "Jabalpur"},
+      {"lat": 23.2599, "lng": 77.4126, "station": "Bhopal"},
+      {"lat": 24.5854, "lng": 73.7125, "station": "Kota"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"}
+    ]
+  },
+  {
+    "id": "T005",
+    "name": "Deccan Queen",
+    "number": "12123",
+    "from": "Pune",
+    "to": "Mumbai CST",
+    "passenger_capacity": 750,
+    "waypoints": [
+      {"lat": 18.5204, "lng": 73.8567, "station": "Pune"},
+      {"lat": 18.6500, "lng": 73.7700, "station": "Shivajinagar"},
+      {"lat": 18.7462, "lng": 73.7290, "station": "Chinchwad"},
+      {"lat": 18.8553, "lng": 73.7003, "station": "Lonavala"},
+      {"lat": 19.0130, "lng": 73.1204, "station": "Karjat"},
+      {"lat": 19.0579, "lng": 73.0149, "station": "Khopoli"},
+      {"lat": 19.0760, "lng": 72.8777, "station": "Panvel"},
+      {"lat": 18.9388, "lng": 72.8356, "station": "Mumbai CST"}
+    ]
+  },
+  {
+    "id": "T006",
+    "name": "Shatabdi Express",
+    "number": "12001",
+    "from": "New Delhi",
+    "to": "Bhopal",
+    "passenger_capacity": 800,
+    "waypoints": [
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"},
+      {"lat": 27.1767, "lng": 78.0081, "station": "Agra"},
+      {"lat": 26.4499, "lng": 78.5698, "station": "Gwalior"},
+      {"lat": 25.4358, "lng": 78.5556, "station": "Jhansi"},
+      {"lat": 24.0765, "lng": 77.9200, "station": "Lalitpur"},
+      {"lat": 23.2599, "lng": 77.4126, "station": "Bhopal"}
+    ]
+  },
+  {
+    "id": "T007",
+    "name": "Duronto Express",
+    "number": "12245",
+    "from": "Howrah",
+    "to": "Chennai",
+    "passenger_capacity": 1050,
+    "waypoints": [
+      {"lat": 22.5839, "lng": 88.3424, "station": "Howrah"},
+      {"lat": 22.2604, "lng": 87.0676, "station": "Kharagpur"},
+      {"lat": 20.9374, "lng": 85.0836, "station": "Bhubaneswar"},
+      {"lat": 19.8134, "lng": 85.8315, "station": "Berhampur"},
+      {"lat": 18.0741, "lng": 83.2093, "station": "Visakhapatnam"},
+      {"lat": 17.3850, "lng": 82.2750, "station": "Rajahmundry"},
+      {"lat": 16.5062, "lng": 80.6480, "station": "Vijayawada"},
+      {"lat": 15.8281, "lng": 79.7714, "station": "Ongole"},
+      {"lat": 14.4673, "lng": 79.9865, "station": "Nellore"},
+      {"lat": 13.0827, "lng": 80.2707, "station": "Chennai Central"}
+    ]
+  },
+  {
+    "id": "T008",
+    "name": "Golden Temple Mail",
+    "number": "12903",
+    "from": "Mumbai Central",
+    "to": "Amritsar",
+    "passenger_capacity": 1000,
+    "waypoints": [
+      {"lat": 18.9696, "lng": 72.8195, "station": "Mumbai Central"},
+      {"lat": 21.1702, "lng": 72.8311, "station": "Surat"},
+      {"lat": 22.3072, "lng": 73.1812, "station": "Vadodara"},
+      {"lat": 23.0225, "lng": 72.5714, "station": "Ahmedabad"},
+      {"lat": 24.5854, "lng": 72.7000, "station": "Palanpur"},
+      {"lat": 26.2389, "lng": 73.0243, "station": "Jodhpur"},
+      {"lat": 27.9007, "lng": 76.5575, "station": "Rewari"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"},
+      {"lat": 30.3398, "lng": 76.3869, "station": "Ambala"},
+      {"lat": 30.9010, "lng": 75.8573, "station": "Ludhiana"},
+      {"lat": 31.6340, "lng": 74.8723, "station": "Amritsar"}
+    ]
+  },
+  {
+    "id": "T009",
+    "name": "Coromandel Express",
+    "number": "12841",
+    "from": "Howrah",
+    "to": "Chennai",
+    "passenger_capacity": 1100,
+    "waypoints": [
+      {"lat": 22.5839, "lng": 88.3424, "station": "Howrah"},
+      {"lat": 22.1697, "lng": 87.3119, "station": "Panskura"},
+      {"lat": 20.9374, "lng": 85.0836, "station": "Bhubaneswar"},
+      {"lat": 18.0741, "lng": 83.2093, "station": "Visakhapatnam"},
+      {"lat": 16.5062, "lng": 80.6480, "station": "Vijayawada"},
+      {"lat": 13.6288, "lng": 79.4192, "station": "Nellore"},
+      {"lat": 13.0827, "lng": 80.2707, "station": "Chennai Central"}
+    ]
+  },
+  {
+    "id": "T010",
+    "name": "Garib Rath",
+    "number": "12909",
+    "from": "Bandra Terminus",
+    "to": "Hazrat Nizamuddin",
+    "passenger_capacity": 1300,
+    "waypoints": [
+      {"lat": 19.0544, "lng": 72.8397, "station": "Bandra Terminus"},
+      {"lat": 21.1702, "lng": 72.8311, "station": "Surat"},
+      {"lat": 22.3072, "lng": 73.1812, "station": "Vadodara"},
+      {"lat": 23.0225, "lng": 72.5714, "station": "Ahmedabad"},
+      {"lat": 24.5854, "lng": 73.7125, "station": "Udaipur"},
+      {"lat": 26.9124, "lng": 75.7873, "station": "Jaipur"},
+      {"lat": 27.5530, "lng": 76.6346, "station": "Alwar"},
+      {"lat": 28.5665, "lng": 77.2440, "station": "Hazrat Nizamuddin"}
+    ]
+  },
+  {
+    "id": "T011",
+    "name": "Jan Shatabdi",
+    "number": "12071",
+    "from": "Dadar",
+    "to": "Madgaon",
+    "passenger_capacity": 600,
+    "waypoints": [
+      {"lat": 19.0178, "lng": 72.8478, "station": "Dadar"},
+      {"lat": 18.9388, "lng": 72.8356, "station": "Mumbai CST"},
+      {"lat": 18.6500, "lng": 72.9700, "station": "Panvel"},
+      {"lat": 18.4088, "lng": 73.0678, "station": "Roha"},
+      {"lat": 17.4399, "lng": 73.3003, "station": "Chiplun"},
+      {"lat": 16.9902, "lng": 73.3120, "station": "Ratnagiri"},
+      {"lat": 16.5400, "lng": 73.8122, "station": "Rajapur Road"},
+      {"lat": 15.4909, "lng": 73.8278, "station": "Madgaon"}
+    ]
+  },
+  {
+    "id": "T012",
+    "name": "Intercity Express",
+    "number": "12193",
+    "from": "Jabalpur",
+    "to": "New Delhi",
+    "passenger_capacity": 700,
+    "waypoints": [
+      {"lat": 23.1815, "lng": 79.9864, "station": "Jabalpur"},
+      {"lat": 23.2599, "lng": 78.1828, "station": "Sagar"},
+      {"lat": 23.2599, "lng": 77.4126, "station": "Bhopal"},
+      {"lat": 24.0765, "lng": 77.9200, "station": "Guna"},
+      {"lat": 25.4358, "lng": 78.5556, "station": "Jhansi"},
+      {"lat": 26.4499, "lng": 78.5698, "station": "Gwalior"},
+      {"lat": 27.1767, "lng": 78.0081, "station": "Agra"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"}
+    ]
+  },
+  {
+    "id": "T013",
+    "name": "Humsafar Express",
+    "number": "82501",
+    "from": "Patna",
+    "to": "New Delhi",
+    "passenger_capacity": 850,
+    "waypoints": [
+      {"lat": 25.5941, "lng": 85.1376, "station": "Patna"},
+      {"lat": 25.7464, "lng": 84.6670, "station": "Ara"},
+      {"lat": 25.7516, "lng": 84.0011, "station": "Buxar"},
+      {"lat": 25.4484, "lng": 83.0302, "station": "Varanasi"},
+      {"lat": 25.4358, "lng": 81.8463, "station": "Allahabad"},
+      {"lat": 26.4499, "lng": 80.3319, "station": "Kanpur"},
+      {"lat": 27.1767, "lng": 78.0081, "station": "Agra"},
+      {"lat": 28.6139, "lng": 77.2090, "station": "New Delhi"}
+    ]
+  },
+  {
+    "id": "T014",
+    "name": "Sampark Kranti",
+    "number": "12452",
+    "from": "Chandigarh",
+    "to": "Hazrat Nizamuddin",
+    "passenger_capacity": 900,
+    "waypoints": [
+      {"lat": 30.7333, "lng": 76.7794, "station": "Chandigarh"},
+      {"lat": 30.3398, "lng": 76.3869, "station": "Ambala"},
+      {"lat": 29.9457, "lng": 76.8187, "station": "Kurukshetra"},
+      {"lat": 29.4503, "lng": 77.0151, "station": "Panipat"},
+      {"lat": 28.8505, "lng": 77.0880, "station": "Sonipat"},
+      {"lat": 28.5665, "lng": 77.2440, "station": "Hazrat Nizamuddin"}
+    ]
+  },
+  {
+    "id": "T015",
+    "name": "Tejas Express",
+    "number": "22119",
+    "from": "Mumbai CST",
+    "to": "Goa",
+    "passenger_capacity": 650,
+    "waypoints": [
+      {"lat": 18.9388, "lng": 72.8356, "station": "Mumbai CST"},
+      {"lat": 18.9696, "lng": 72.8195, "station": "Dadar"},
+      {"lat": 18.6500, "lng": 72.9700, "station": "Panvel"},
+      {"lat": 18.4088, "lng": 73.0678, "station": "Roha"},
+      {"lat": 17.8800, "lng": 73.2000, "station": "Mangaon"},
+      {"lat": 17.4399, "lng": 73.3003, "station": "Chiplun"},
+      {"lat": 16.9902, "lng": 73.3120, "station": "Ratnagiri"},
+      {"lat": 16.2000, "lng": 73.6500, "station": "Sindhudurg"},
+      {"lat": 15.4909, "lng": 73.8278, "station": "Goa (Madgaon)"}
+    ]
+  }
+]

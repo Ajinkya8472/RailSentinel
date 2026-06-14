@@ -1,0 +1,86 @@
+{
+  "global_defaults": {
+    "vibration_mean": 1.0,
+    "vibration_std": 0.15,
+    "temperature_mean": 45.0,
+    "temperature_std": 2.0,
+    "spike_vibration_min": 2.8,
+    "spike_vibration_max": 3.5,
+    "spike_temperature_min": 78.0,
+    "spike_temperature_max": 90.0
+  },
+  "location_type_baselines": {
+    "bridge": {
+      "vibration_mean": 1.2,
+      "vibration_std": 0.20,
+      "temperature_mean": 44.0,
+      "temperature_std": 2.5,
+      "note": "Higher vibration expected on bridges"
+    },
+    "tunnel": {
+      "vibration_mean": 0.9,
+      "vibration_std": 0.12,
+      "temperature_mean": 42.0,
+      "temperature_std": 1.5,
+      "note": "Lower temperature in tunnels"
+    },
+    "curve": {
+      "vibration_mean": 1.3,
+      "vibration_std": 0.18,
+      "temperature_mean": 45.0,
+      "temperature_std": 2.0,
+      "note": "Lateral forces increase vibration on curves"
+    },
+    "gradient": {
+      "vibration_mean": 1.1,
+      "vibration_std": 0.15,
+      "temperature_mean": 48.0,
+      "temperature_std": 3.0,
+      "note": "Braking on gradients increases temperature"
+    },
+    "station": {
+      "vibration_mean": 0.8,
+      "vibration_std": 0.10,
+      "temperature_mean": 43.0,
+      "temperature_std": 2.0,
+      "note": "Low speed near stations"
+    },
+    "open_track": {
+      "vibration_mean": 1.0,
+      "vibration_std": 0.15,
+      "temperature_mean": 45.0,
+      "temperature_std": 2.0,
+      "note": "Standard open track baseline"
+    }
+  },
+  "seasonal_adjustments": {
+    "summer": {"temperature_offset": 5.0, "vibration_offset": 0.0},
+    "monsoon": {"temperature_offset": -3.0, "vibration_offset": 0.1},
+    "winter": {"temperature_offset": -8.0, "vibration_offset": 0.05},
+    "spring": {"temperature_offset": 0.0,  "vibration_offset": 0.0}
+  },
+  "alert_thresholds": {
+    "vibration_warning":  2.0,
+    "vibration_critical": 2.8,
+    "temperature_warning":  65.0,
+    "temperature_critical": 78.0,
+    "sigma_alert": 2.5
+  },
+  "route_specific_baselines": {
+    "T001": {"vibration_mean": 0.95, "temperature_mean": 44.0, "note": "Mumbai-Delhi flat route"},
+    "T002": {"vibration_mean": 1.15, "temperature_mean": 47.0, "note": "Western Ghats gradients"},
+    "T003": {"vibration_mean": 1.05, "temperature_mean": 45.5, "note": "Standard NR route"},
+    "T004": {"vibration_mean": 1.20, "temperature_mean": 48.0, "note": "Deccan plateau mixed"},
+    "T005": {"vibration_mean": 1.25, "temperature_mean": 46.0, "note": "Bhor Ghat steep descent"},
+    "T006": {"vibration_mean": 0.90, "temperature_mean": 43.0, "note": "High speed corridor"},
+    "T007": {"vibration_mean": 1.10, "temperature_mean": 46.0, "note": "Coastal Odisha route"},
+    "T008": {"vibration_mean": 1.00, "temperature_mean": 45.0, "note": "Delhi-Amritsar flat"},
+    "T009": {"vibration_mean": 1.08, "temperature_mean": 46.5, "note": "East Coast route"},
+    "T010": {"vibration_mean": 0.98, "temperature_mean": 44.5, "note": "Mumbai-Delhi fast"},
+    "T011": {"vibration_mean": 1.30, "temperature_mean": 47.0, "note": "Konkan coast curves"},
+    "T012": {"vibration_mean": 1.05, "temperature_mean": 45.0, "note": "Central route"},
+    "T013": {"vibration_mean": 1.00, "temperature_mean": 44.0, "note": "Patna-Delhi route"},
+    "T014": {"vibration_mean": 0.85, "temperature_mean": 42.0, "note": "Short northern route"},
+    "T015": {"vibration_mean": 1.35, "temperature_mean": 47.5, "note": "Konkan high curve density"}
+  }
+}
