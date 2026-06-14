@@ -1,0 +1,67 @@
+<!-- illustrations/loading-state.svg — animated loading illustration -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" role="img" aria-label="Loading illustration">
+  <defs>
+    <linearGradient id="load-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="load-train" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="200" fill="url(#load-sky)" rx="12"/>
+
+  <!-- Stars -->
+  <circle cx="40"  cy="30" r="1.2" fill="#fff" fill-opacity="0.6"/>
+  <circle cx="90"  cy="20" r="0.8" fill="#fff" fill-opacity="0.4"/>
+  <circle cx="150" cy="15" r="1.0" fill="#fff" fill-opacity="0.5"/>
+  <circle cx="220" cy="25" r="1.2" fill="#fff" fill-opacity="0.6"/>
+  <circle cx="260" cy="40" r="0.8" fill="#fff" fill-opacity="0.3"/>
+  <circle cx="70"  cy="55" r="0.6" fill="#fff" fill-opacity="0.4"/>
+  <circle cx="190" cy="50" r="0.9" fill="#fff" fill-opacity="0.5"/>
+
+  <!-- Tracks -->
+  <line x1="0"   y1="160" x2="280" y2="160" stroke="#334155" stroke-width="2.5"/>
+  <line x1="0"   y1="167" x2="280" y2="167" stroke="#334155" stroke-width="2.5"/>
+  <line x1="20"  y1="157" x2="20"  y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="48"  y1="157" x2="48"  y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="76"  y1="157" x2="76"  y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="104" y1="157" x2="104" y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="132" y1="157" x2="132" y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="160" y1="157" x2="160" y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="188" y1="157" x2="188" y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="216" y1="157" x2="216" y2="170" stroke="#1e293b" stroke-width="2"/>
+  <line x1="244" y1="157" x2="244" y2="170" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Train body (sliding animation) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-160 0; 280 0" dur="2.2s" repeatCount="indefinite"/>
+    <rect x="0" y="122" width="120" height="34" rx="5" fill="url(#load-train)"/>
+    <path d="M120 124 L128 139 L120 154 Z" fill="#3b82f6"/>
+    <rect x="7"  y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <rect x="24" y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <rect x="41" y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <rect x="58" y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <rect x="75" y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <rect x="92" y="127" width="12" height="8" rx="1.5" fill="#fff" fill-opacity="0.75"/>
+    <!-- Speed lines -->
+    <line x1="-20" y1="130" x2="-5"  y2="130" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.6"/>
+    <line x1="-28" y1="137" x2="-8"  y2="137" stroke="#60a5fa" stroke-width="1"   stroke-linecap="round" stroke-opacity="0.4"/>
+    <line x1="-22" y1="144" x2="-6"  y2="144" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+    <!-- Wheels -->
+    <circle cx="24"  cy="158" r="4" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1"/>
+    <circle cx="95"  cy="158" r="4" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1"/>
+  </g>
+
+  <!-- Loading dots -->
+  <circle cx="125" cy="185" r="3" fill="#3b82f6">
+    <animate attributeName="fill-opacity" values="1;0.2;1" dur="1.2s" begin="0s"    repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="185" r="3" fill="#3b82f6">
+    <animate attributeName="fill-opacity" values="1;0.2;1" dur="1.2s" begin="0.4s"  repeatCount="indefinite"/>
+  </circle>
+  <circle cx="155" cy="185" r="3" fill="#3b82f6">
+    <animate attributeName="fill-opacity" values="1;0.2;1" dur="1.2s" begin="0.8s"  repeatCount="indefinite"/>
+  </circle>
+</svg>

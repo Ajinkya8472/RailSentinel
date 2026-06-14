@@ -1,0 +1,167 @@
+[
+  {
+    "id": "INC-00101",
+    "title": "OHE (Overhead Equipment) Tripping",
+    "description": "Multiple breaker trips reported on the UP line between New Delhi (NDLS) and Mathura. Power supply interrupted, affecting traction.",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "in_progress",
+    "createdAt": "2026-06-10T02:15:00.000Z",
+    "updatedAt": "2026-06-10T02:45:00.000Z",
+    "linkedTrainIds": ["TRN-12002", "TRN-12952"]
+  },
+  {
+    "id": "INC-00102",
+    "title": "Track Circuit Failure",
+    "description": "Track circuit dropping continuously at Home Signal of Kanpur Central (CNB). Signal aspect remaining red, causing trailing delays.",
+    "severity": "high",
+    "priority": "P2",
+    "status": "acknowledged",
+    "createdAt": "2026-06-10T03:20:00.000Z",
+    "updatedAt": "2026-06-10T03:35:00.000Z",
+    "linkedTrainIds": ["TRN-12302"]
+  },
+  {
+    "id": "INC-00103",
+    "title": "Medical Emergency",
+    "description": "Passenger requiring urgent medical assistance in coach B4. Doctor requested at the next commercial halt (Prayagraj Jn).",
+    "severity": "high",
+    "priority": "P2",
+    "status": "open",
+    "createdAt": "2026-06-10T04:10:00.000Z",
+    "updatedAt": "2026-06-10T04:10:00.000Z",
+    "linkedTrainIds": ["TRN-12310"]
+  },
+  {
+    "id": "INC-00104",
+    "title": "Point Motor Failure",
+    "description": "Point no. 4A/B failing to set in normal position. Route cannot be locked for main line reception. Manual clamping initiated.",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "open",
+    "createdAt": "2026-06-10T01:05:00.000Z",
+    "updatedAt": "2026-06-10T01:50:00.000Z",
+    "linkedTrainIds": ["TRN-12424"]
+  },
+  {
+    "id": "INC-00105",
+    "title": "Pantograph Entanglement",
+    "description": "Loco pantograph entangled with OHE contact wire. Substantial damage to pantograph. Relief loco requested from shed.",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "escalated",
+    "createdAt": "2026-06-09T23:45:00.000Z",
+    "updatedAt": "2026-06-10T01:30:00.000Z",
+    "linkedTrainIds": ["TRN-12802"]
+  },
+  {
+    "id": "INC-00106",
+    "title": "Waterlogging on Tracks",
+    "description": "Heavy rainfall leading to waterlogging above rail level at Mumbai Central (MMCT) yard. Speed restriction of 10 kmph imposed.",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "resolved",
+    "createdAt": "2026-06-09T20:10:00.000Z",
+    "updatedAt": "2026-06-10T00:15:00.000Z",
+    "linkedTrainIds": ["TRN-12951", "TRN-12953"]
+  },
+  {
+    "id": "INC-00107",
+    "title": "Cattle Runover (CRO)",
+    "description": "Cattle runover reported in block section. Loco pilot checking for damage to BP/FP air hoses. Train halted in section.",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "acknowledged",
+    "createdAt": "2026-06-10T05:00:00.000Z",
+    "updatedAt": "2026-06-10T05:05:00.000Z",
+    "linkedTrainIds": ["TRN-12431"]
+  },
+  {
+    "id": "INC-00108",
+    "title": "Brake Binding",
+    "description": "Smoke reported from coach S5 due to brake binding. Train stopped out of course for isolation of brake cylinder.",
+    "severity": "high",
+    "priority": "P2",
+    "status": "resolved",
+    "createdAt": "2026-06-09T22:30:00.000Z",
+    "updatedAt": "2026-06-09T23:15:00.000Z",
+    "linkedTrainIds": ["TRN-12553"]
+  },
+  {
+    "id": "INC-00109",
+    "title": "Alarm Chain Pulling (ACP)",
+    "description": "Unscheduled train halt due to ACP in coach S2. Guard and RPF investigating the cause.",
+    "severity": "low",
+    "priority": "P4",
+    "status": "closed",
+    "createdAt": "2026-06-09T18:45:00.000Z",
+    "updatedAt": "2026-06-09T19:10:00.000Z",
+    "linkedTrainIds": ["TRN-12137"]
+  },
+  {
+    "id": "INC-00110",
+    "title": "Level Crossing Gate Malfunction",
+    "description": "Interlocked LC gate no. 42 boom damaged by road vehicle. Gate cannot be locked, trains piloted at 15 kmph.",
+    "severity": "high",
+    "priority": "P2",
+    "status": "in_progress",
+    "createdAt": "2026-06-10T04:45:00.000Z",
+    "updatedAt": "2026-06-10T05:15:00.000Z",
+    "linkedTrainIds": ["TRN-12627"]
+  },
+  {
+    "id": "INC-00111",
+    "title": "Loco Traction Failure",
+    "description": "Traction motor isolation failed in WAP-7 loco. Unable to haul load. Assisting engine (banking) requested.",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "acknowledged",
+    "createdAt": "2026-06-10T06:10:00.000Z",
+    "updatedAt": "2026-06-10T06:15:00.000Z",
+    "linkedTrainIds": ["TRN-12834"]
+  },
+  {
+    "id": "INC-00112",
+    "title": "Hot Axle Detected",
+    "description": "Acoustic bearing detector triggered hot axle warning for wagon 42. Detachment required at next loop line.",
+    "severity": "high",
+    "priority": "P2",
+    "status": "in_progress",
+    "createdAt": "2026-06-10T03:50:00.000Z",
+    "updatedAt": "2026-06-10T04:20:00.000Z",
+    "linkedTrainIds": ["TRN-FREIGHT-44"]
+  },
+  {
+    "id": "INC-00113",
+    "title": "Platform Overcrowding",
+    "description": "Platform 1 density exceeded 90% capacity due to delayed arrival of two major expresses. RPF deployment requested.",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "escalated",
+    "createdAt": "2026-06-10T06:30:00.000Z",
+    "updatedAt": "2026-06-10T06:45:00.000Z",
+    "linkedTrainIds": ["TRN-12951", "TRN-12002"]
+  },
+  {
+    "id": "INC-00114",
+    "title": "Vande Bharat Window Damage",
+    "description": "Stone pelting incident reported in section resulting in cracked exterior glass of coach C4. No injuries reported.",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "resolved",
+    "createdAt": "2026-06-09T17:15:00.000Z",
+    "updatedAt": "2026-06-09T18:00:00.000Z",
+    "linkedTrainIds": ["TRN-22436"]
+  },
+  {
+    "id": "INC-00115",
+    "title": "Route Relay Interlocking (RRI) Reboot",
+    "description": "RRI panel unresponsive. System reboot initiated by S&T team. All signals reverted to danger temporarily.",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "closed",
+    "createdAt": "2026-06-09T12:00:00.000Z",
+    "updatedAt": "2026-06-09T12:30:00.000Z",
+    "linkedTrainIds": ["TRN-12004", "TRN-12301", "TRN-12555"]
+  }
+]

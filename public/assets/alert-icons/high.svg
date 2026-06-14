@@ -1,0 +1,6 @@
+<!-- alert-icons/high.svg — orange triangle warning -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="High severity alert">
+  <path d="M16 3 L30 28 H2 Z" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="15" y="12" width="2" height="8" rx="1" fill="#f97316"/>
+  <rect x="15" y="22" width="2" height="2" rx="1" fill="#f97316"/>
+</svg>

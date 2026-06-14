@@ -1,0 +1,538 @@
+/* src/styles/shell.css */
+
+@layer components {
+
+  /* ------------------------------------------------------------------------
+   * AppShell Layout Grid
+   * ------------------------------------------------------------------------ */
+  .app-shell {
+    @apply flex h-screen w-full overflow-hidden bg-surface-shell text-text-primary;
+  }
+
+  .app-shell__content {
+    @apply flex flex-col flex-1 w-full h-full relative overflow-hidden;
+  }
+
+  .app-shell__main {
+    @apply flex-1 overflow-y-auto overflow-x-hidden relative p-6 bg-surface-page shadow-inner rounded-tl-3xl border-t border-l border-border-default/30;
+  }
+
+  .app-shell__state {
+    @apply absolute inset-0 flex flex-col items-center justify-center p-8 bg-surface-page/90 backdrop-blur-sm z-50 text-center;
+  }
+
+  .app-shell__state--success {
+    @apply hidden;
+  }
+
+  .app-shell__state-title {
+    @apply text-2xl font-bold text-white mb-2;
+  }
+
+  .app-shell__state-description {
+    @apply text-base text-text-secondary max-w-md;
+  }
+
+  .app-shell__state-action {
+    @apply mt-6 px-6 py-2.5 rounded-lg bg-brand-primary text-white font-medium hover:bg-brand-primaryHover transition-colors shadow-glow-brand;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Sidebar Component
+   * ------------------------------------------------------------------------ */
+  .sidebar {
+    @apply flex flex-col shrink-0 h-full bg-surface-shell border-r border-border-default transition-all duration-300 z-40;
+  }
+
+  .sidebar--expanded {
+    @apply w-72;
+  }
+
+  .sidebar--collapsed {
+    @apply w-20;
+  }
+
+  /* When collapsed, hide text labels and complex areas */
+  .sidebar--collapsed .sidebar__item-text,
+  .sidebar--collapsed .sidebar__brand-name,
+  .sidebar--collapsed .sidebar__section-heading,
+  .sidebar--collapsed .sidebar__risk,
+  .sidebar--collapsed .sidebar__utilities,
+  .sidebar--collapsed .sidebar__footer {
+    @apply hidden;
+  }
+
+  .sidebar__header {
+    @apply flex items-center justify-between h-16 px-4 border-b border-border-subtle shrink-0;
+  }
+
+  .sidebar__brand {
+    @apply flex items-center gap-3 overflow-hidden;
+  }
+
+  .sidebar__brand-mark {
+    @apply flex items-center justify-center w-8 h-8 rounded bg-gradient-to-br from-brand-navy-500 to-brand-navy-700 text-white font-mono font-bold text-sm shrink-0 shadow-glow-brand;
+  }
+
+  .sidebar__brand-copy {
+    @apply flex flex-col overflow-hidden whitespace-nowrap;
+  }
+
+  .sidebar__brand-name {
+    @apply text-base font-bold text-white tracking-wide;
+  }
+
+  .sidebar__brand-subtitle {
+    @apply text-xs text-brand-navy-300 font-medium tracking-wider uppercase opacity-80;
+  }
+
+  .sidebar__actions {
+    @apply flex items-center gap-1 opacity-0 pointer-events-none absolute;
+    /* Hidden in Sidebar, usually in Topbar now */
+  }
+
+  .sidebar__collapse-button {
+    @apply p-1.5 rounded-md text-text-tertiary hover:text-text-primary hover:bg-surface-elevated transition-colors;
+    font-size: 0;
+  }
+
+  .sidebar__collapse-button::before {
+    content: "≡";
+    @apply text-xl leading-none block;
+  }
+
+  /* Navigation List */
+  .sidebar__nav {
+    @apply flex-1 overflow-y-auto py-4 px-3 space-y-1;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .sidebar__nav::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+
+  .sidebar__section-heading {
+    @apply text-[10px] font-bold text-text-tertiary uppercase tracking-wider mb-2 px-3 mt-4;
+  }
+
+  .sidebar__list {
+    @apply space-y-1;
+  }
+
+  .sidebar__item {
+    @apply relative;
+  }
+
+  .sidebar__link,
+  .sidebar__button {
+    @apply flex items-center w-full gap-3 px-3 py-2.5 rounded-xl text-left text-sm font-medium text-text-secondary transition-all outline-none focus-visible:ring-2 focus-visible:ring-brand-primary;
+  }
+
+  .sidebar__link:hover,
+  .sidebar__button:hover {
+    @apply text-text-primary bg-surface-elevated;
+  }
+
+  .sidebar__link.is-active,
+  .sidebar__button.is-active {
+    @apply text-brand-navy-100 bg-brand-primary/10 shadow-inner;
+  }
+
+  .sidebar__link.is-active::before,
+  .sidebar__button.is-active::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-brand-primary rounded-r-full shadow-glow-brand;
+  }
+
+  .sidebar__item-icon {
+    @apply flex items-center justify-center w-5 h-5 shrink-0 opacity-70;
+  }
+
+  .sidebar__link:hover .sidebar__item-icon,
+  .sidebar__button:hover .sidebar__item-icon {
+    @apply opacity-100 text-brand-navy-300;
+  }
+
+  .sidebar__link.is-active .sidebar__item-icon,
+  .sidebar__button.is-active .sidebar__item-icon {
+    @apply opacity-100 text-brand-navy-400;
+  }
+
+  .sidebar__item-text {
+    @apply flex flex-col overflow-hidden whitespace-nowrap;
+  }
+
+  .sidebar__item-label {
+    @apply truncate;
+  }
+
+  .sidebar__risk {
+    @apply p-4 border-b border-border-subtle shrink-0;
+  }
+
+  .sidebar__risk-card {
+    @apply flex flex-col gap-1 p-3 rounded-xl bg-surface-elevated border border-border-subtle;
+  }
+
+  .sidebar__risk-score {
+    @apply text-2xl font-mono font-bold text-white;
+  }
+
+  .sidebar__risk-copy {
+    @apply flex flex-col;
+  }
+
+  .sidebar__risk-level {
+    @apply text-sm font-bold text-brand-navy-400 uppercase tracking-wide;
+  }
+
+  .sidebar__risk-description {
+    @apply text-xs text-text-secondary mt-1;
+  }
+
+  .sidebar__risk-meta {
+    @apply text-[10px] text-text-tertiary mt-2;
+  }
+
+  /* Utilities */
+  .sidebar__utilities {
+    @apply px-3 py-4 border-t border-border-subtle shrink-0;
+  }
+
+  .sidebar__utility-list {
+    @apply space-y-1;
+  }
+
+  .sidebar__utility-button {
+    @apply flex items-center gap-3 w-full px-3 py-2 rounded-lg text-xs font-medium text-text-tertiary hover:text-text-primary hover:bg-surface-elevated transition-colors;
+  }
+
+  .sidebar__footer {
+    @apply p-4 border-t border-border-default shrink-0 bg-surface-shell/50 backdrop-blur-md;
+  }
+
+  .sidebar__status {
+    @apply flex items-center justify-between text-xs font-medium mb-1;
+  }
+
+  .sidebar__status-label {
+    @apply text-text-tertiary uppercase tracking-wider;
+  }
+
+  .sidebar__status-value {
+    @apply text-brand-navy-400 flex items-center gap-1.5;
+  }
+
+  .sidebar__status-value::before {
+    content: '';
+    @apply w-1.5 h-1.5 rounded-full bg-brand-navy-400 animate-pulse;
+  }
+
+  .sidebar__status-meta {
+    @apply text-[10px] text-text-tertiary/70 truncate;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Topbar Component
+   * ------------------------------------------------------------------------ */
+  .topbar {
+    @apply flex items-center justify-between h-16 px-6 bg-surface-shell/80 backdrop-blur-xl border-b border-border-default shrink-0 z-30 sticky top-0 gap-6;
+  }
+
+  .topbar__leading {
+    @apply flex items-center gap-4 shrink-0;
+  }
+
+  .topbar__sidebar-toggle {
+    @apply p-2 rounded-lg text-text-secondary hover:text-white hover:bg-surface-elevated transition-colors text-sm font-medium;
+  }
+
+  .topbar__brand {
+    @apply flex items-center gap-3 shrink-0;
+  }
+
+  .topbar__brand-mark {
+    @apply flex items-center justify-center w-8 h-8 rounded bg-gradient-to-br from-brand-navy-500 to-brand-navy-700 text-white font-mono font-bold text-sm shadow-glow-brand;
+  }
+
+  .topbar__brand-copy {
+    @apply flex flex-col text-left;
+  }
+
+  .topbar__brand-title {
+    @apply text-sm font-bold text-white leading-tight;
+  }
+
+  .topbar__brand-context {
+    @apply text-xs text-brand-navy-300 font-medium;
+  }
+
+  .topbar__context {
+    @apply flex-1 hidden md:flex items-center;
+  }
+
+  .topbar__breadcrumb-list {
+    @apply flex items-center gap-2 text-sm;
+  }
+
+  .topbar__breadcrumb-item {
+    @apply flex items-center gap-2;
+  }
+
+  .topbar__breadcrumb-item::after {
+    content: '/';
+    @apply text-text-tertiary/50 font-mono text-xs ml-2;
+  }
+
+  .topbar__breadcrumb-item:last-child::after {
+    content: none;
+  }
+
+  .topbar__breadcrumb-link {
+    @apply text-text-tertiary hover:text-white transition-colors;
+  }
+
+  .topbar__breadcrumb-current {
+    @apply text-brand-navy-100 font-medium cursor-default;
+  }
+
+  .topbar__context-fallback {
+    @apply text-sm text-text-secondary font-medium;
+  }
+
+  .topbar__search {
+    @apply flex-1 max-w-md relative hidden lg:block;
+  }
+
+  .topbar__search-input {
+    @apply w-full h-9 pl-4 pr-10 rounded-full bg-surface-elevated border border-border-subtle text-sm text-white placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all;
+  }
+
+  .topbar__search-button {
+    @apply absolute right-2 top-1/2 -translate-y-1/2 p-1 text-text-tertiary hover:text-white transition-colors text-xs font-medium;
+  }
+
+  .topbar__actions {
+    @apply flex items-center gap-3 shrink-0;
+  }
+
+  .topbar__risk-chip {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-elevated transition-colors hover:bg-surface-cardHover text-left;
+  }
+
+  .topbar__risk-score {
+    @apply text-lg font-mono font-bold text-white leading-none;
+  }
+
+  .topbar__risk-copy {
+    @apply flex flex-col justify-center;
+  }
+
+  .topbar__risk-label {
+    @apply text-[10px] font-bold uppercase tracking-wider text-text-secondary leading-none;
+  }
+
+  .topbar__risk-confidence {
+    @apply text-[10px] text-text-tertiary mt-0.5 leading-none;
+  }
+
+  .topbar__notification-button {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-elevated border border-border-subtle hover:bg-surface-cardHover transition-colors;
+  }
+
+  .topbar__notification-label {
+    @apply text-sm font-medium text-text-secondary hidden xl:block;
+  }
+
+  .topbar__notification-count {
+    @apply flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-brand-primary text-white text-[10px] font-bold shadow-glow-brand;
+  }
+
+  .topbar__action-button {
+    @apply px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary hover:text-white hover:bg-surface-elevated transition-colors;
+  }
+
+  .topbar__status {
+    @apply hidden;
+    /* Hide the string-based status from taking up layout space in the header */
+  }
+  /* =========================================================================
+ * PREMIUM COMMUNICATION AUDIT TRAIL FLYOUT OVERLAY
+ * ========================================================================= */
+.notification-center {
+  @apply flex flex-col w-full h-full bg-[#0B1220] border-l border-border-default shadow-2xl p-5 select-none text-text-primary overflow-hidden font-sans;
+}
+
+.notification-center__header {
+  @apply flex items-start justify-between border-b border-border-subtle pb-4 shrink-0 gap-4;
+}
+
+.notification-center__title {
+  @apply text-sm font-black font-mono tracking-wider text-white uppercase;
+}
+
+.notification-center__subtitle {
+  @apply text-[10px] text-text-tertiary font-light mt-1 leading-normal;
+}
+
+.notification-center__header-actions {
+  @apply flex items-center gap-2;
+}
+
+.notification-center__header-action {
+  @apply h-6 px-2.5 rounded-md bg-surface-elevated border border-border-subtle text-[10px] font-mono text-text-secondary hover:text-white transition-colors uppercase font-bold tracking-wider;
+}
+
+/* Summary Counter Section Tiles */
+.notification-center__summary {
+  @apply grid grid-cols-4 gap-2 py-4 shrink-0 font-mono text-left;
+}
+
+.notification-center__summary-card {
+  @apply p-2.5 bg-surface-elevated/40 border border-border-subtle rounded-xl flex flex-col justify-between;
+}
+
+.notification-center__summary-label {
+  @apply text-[8px] text-text-tertiary uppercase font-black tracking-widest;
+}
+
+.notification-center__summary-value {
+  @apply text-base font-black text-white mt-1 leading-none;
+}
+
+/* Unified Filters Row System */
+.notification-center__filters {
+  @apply p-3 bg-surface-elevated/30 border border-border-subtle rounded-xl grid grid-cols-3 gap-2.5 text-[10px] font-mono mb-4 shrink-0;
+}
+
+.notification-center__filter {
+  @apply flex flex-col gap-1;
+}
+
+.notification-center__filter-label {
+  @apply text-[8px] font-black text-text-tertiary uppercase tracking-wider;
+}
+
+.notification-center__filter-control {
+  @apply w-full bg-[#060B13] border border-border-subtle rounded px-2 py-1 text-text-primary outline-none text-[10px] transition-colors focus:border-brand-primary;
+}
+
+/* Scroll Feed Log Row Cards Layout */
+.notification-center__body {
+  @apply flex-1 overflow-y-auto min-h-0 relative my-2 pr-1;
+}
+
+.notification-center__list {
+  @apply space-y-2 p-0 m-0 w-full;
+}
+
+.notification-center__item {
+  @apply list-none w-full;
+}
+
+.notification-center__card {
+  @apply border border-border-subtle bg-surface-card/40 rounded-xl p-4 flex flex-col gap-3 transition-all duration-150;
+}
+
+.notification-center__card.is-selected {
+  @apply border-brand-primary/50 bg-surface-elevated ring-1 ring-brand-primary/30;
+}
+
+.notification-center__card-main {
+  @apply w-full text-left bg-transparent border-none p-0 outline-none block space-y-2;
+}
+
+.notification-center__headline {
+  @apply flex items-center gap-2.5 min-w-0;
+}
+
+.notification-center__priority {
+  @apply h-5 px-1.5 rounded text-[9px] font-mono font-black flex items-center justify-center bg-[#060B13] border border-border-subtle text-text-secondary;
+}
+
+.notification-center__title {
+  @apply text-xs font-bold font-sans tracking-tight text-white truncate flex-1;
+}
+
+.notification-center__message {
+  @apply text-[11px] font-sans text-text-secondary font-light leading-relaxed;
+}
+
+.notification-center__meta {
+  @apply grid grid-cols-3 gap-2 border-t border-border-subtle/40 pt-2.5 font-mono text-[8px] text-text-tertiary uppercase tracking-wider;
+}
+
+.notification-center__meta-item strong {
+  @apply text-text-primary font-bold ml-0.5;
+}
+
+/* Action Tray Button Configurations */
+.notification-center__actions {
+  @apply flex flex-wrap items-center gap-1.5 border-t border-border-subtle/50 pt-2;
+}
+
+.notification-center__action {
+  @apply px-2 py-1 bg-[#060B13] hover:bg-surface-elevated border border-border-subtle text-text-secondary hover:text-white font-mono text-[9px] rounded uppercase transition-colors;
+}
+
+.notification-center__action--secondary {
+  @apply ml-auto opacity-70 hover:opacity-100 border-transparent bg-transparent text-text-tertiary;
+}
+
+/* Empty Fallbacks and Footers */
+.notification-center__empty {
+  @apply absolute inset-0 flex flex-col items-center justify-center text-center p-6 border border-dashed border-border-subtle bg-[#060B13]/30 rounded-2xl gap-3;
+}
+
+.notification-center__footer {
+  @apply border-t border-border-default pt-4 flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-text-tertiary shrink-0;
+}
+
+.notification-center__footer-state.is-success {
+  @apply text-semantic-success-text font-bold flex items-center gap-1.5;
+}
+
+.notification-center__footer-state.is-success::before {
+  content: '';
+  @apply w-1.5 h-1.5 rounded-full bg-semantic-success-base animate-pulse;
+}
+/* =========================================================================
+ * PREMIUM UNIFIED LANDING PAGE FOOTER GRID
+ * ========================================================================= */
+.landing-footer {
+  @apply w-full h-10 bg-slate-900 border-t border-slate-800 flex items-center justify-between px-6 shrink-0 font-mono text-[10px] uppercase tracking-wider text-slate-500 select-none z-40;
+}
+
+.landing-footer__left,
+.landing-footer__right {
+  @apply flex items-center gap-3.5;
+}
+
+.landing-footer__status {
+  @apply flex items-center gap-2 font-bold text-slate-400;
+}
+
+.landing-footer__pulse-dot {
+  @apply h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse;
+}
+
+.landing-footer__divider {
+  @apply text-slate-800 font-light;
+}
+
+.landing-footer__version {
+  @apply text-slate-600 font-medium;
+}
+
+.landing-footer__link {
+  @apply flex items-center gap-1.5 text-slate-500 hover:text-orange-400 transition-colors no-underline cursor-pointer;
+}
+
+.landing-footer__security {
+  @apply flex items-center gap-1.5 text-slate-400 font-bold;
+}
+}

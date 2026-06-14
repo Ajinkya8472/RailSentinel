@@ -1,0 +1,222 @@
+[
+  {
+    "id": "TRN-12002",
+    "trainNumber": "12002",
+    "name": "New Delhi Bhopal Shatabdi Express",
+    "routeId": "RTE-NDLS-BPL",
+    "status": "running",
+    "delayMinutes": 0,
+    "currentStation": "AGC",
+    "nextStation": "GWL",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12951",
+    "trainNumber": "12951",
+    "name": "Mumbai Central - New Delhi Rajdhani Express",
+    "routeId": "RTE-MMCT-NDLS",
+    "status": "delayed",
+    "delayMinutes": 45,
+    "currentStation": "KOTA",
+    "nextStation": "SWM",
+    "healthStatus": "degraded"
+  },
+  {
+    "id": "TRN-12952",
+    "trainNumber": "12952",
+    "name": "New Delhi - Mumbai Central Rajdhani Express",
+    "routeId": "RTE-NDLS-MMCT",
+    "status": "running",
+    "delayMinutes": 5,
+    "currentStation": "MTJ",
+    "nextStation": "KOTA",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12301",
+    "trainNumber": "12301",
+    "name": "Howrah - New Delhi Rajdhani Express",
+    "routeId": "RTE-HWH-NDLS",
+    "status": "running",
+    "delayMinutes": -5,
+    "currentStation": "PRYJ",
+    "nextStation": "CNB",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12302",
+    "trainNumber": "12302",
+    "name": "New Delhi - Howrah Rajdhani Express",
+    "routeId": "RTE-NDLS-HWH",
+    "status": "delayed",
+    "delayMinutes": 120,
+    "currentStation": "CNB",
+    "nextStation": "PRYJ",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12310",
+    "trainNumber": "12310",
+    "name": "New Delhi - Rajendra Nagar Tejas Rajdhani",
+    "routeId": "RTE-NDLS-RJPB",
+    "status": "fault",
+    "delayMinutes": 35,
+    "currentStation": "PRYJ",
+    "nextStation": "DDU",
+    "healthStatus": "fault"
+  },
+  {
+    "id": "TRN-12424",
+    "trainNumber": "12424",
+    "name": "New Delhi - Dibrugarh Rajdhani Express",
+    "routeId": "RTE-NDLS-DBRG",
+    "status": "conflict",
+    "delayMinutes": 25,
+    "currentStation": "LKO",
+    "nextStation": "GKP",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12802",
+    "trainNumber": "12802",
+    "name": "New Delhi - Puri Purushottam Express",
+    "routeId": "RTE-NDLS-PURI",
+    "status": "disrupted",
+    "delayMinutes": 90,
+    "currentStation": "GAYA",
+    "nextStation": "KQR",
+    "healthStatus": "fault"
+  },
+  {
+    "id": "TRN-12953",
+    "trainNumber": "12953",
+    "name": "Mumbai Central - Hazrat Nizamuddin August Kranti",
+    "routeId": "RTE-MMCT-NZM",
+    "status": "delayed",
+    "delayMinutes": 15,
+    "currentStation": "BRC",
+    "nextStation": "RTM",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12431",
+    "trainNumber": "12431",
+    "name": "Trivandrum - Hazrat Nizamuddin Rajdhani",
+    "routeId": "RTE-TVC-NZM",
+    "status": "delayed",
+    "delayMinutes": 150,
+    "currentStation": "BPQ",
+    "nextStation": "NGP",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12553",
+    "trainNumber": "12553",
+    "name": "Saharsa - New Delhi Vaishali Express",
+    "routeId": "RTE-SHC-NDLS",
+    "status": "running",
+    "delayMinutes": 10,
+    "currentStation": "GKP",
+    "nextStation": "BST",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12137",
+    "trainNumber": "12137",
+    "name": "Mumbai CST - Firozpur Punjab Mail",
+    "routeId": "RTE-CSMT-FZR",
+    "status": "cancelled",
+    "delayMinutes": 0,
+    "currentStation": "BSL",
+    "nextStation": "KNW",
+    "healthStatus": "maintenance"
+  },
+  {
+    "id": "TRN-12627",
+    "trainNumber": "12627",
+    "name": "Bengaluru - New Delhi Karnataka Express",
+    "routeId": "RTE-SBC-NDLS",
+    "status": "conflict",
+    "delayMinutes": 40,
+    "currentStation": "ET",
+    "nextStation": "BPL",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12834",
+    "trainNumber": "12834",
+    "name": "Howrah - Ahmedabad Superfast Express",
+    "routeId": "RTE-HWH-ADI",
+    "status": "fault",
+    "delayMinutes": 75,
+    "currentStation": "R",
+    "nextStation": "DURG",
+    "healthStatus": "fault"
+  },
+  {
+    "id": "TRN-FREIGHT-44",
+    "trainNumber": "FR-BCNHL-44",
+    "name": "BCNHL Coal Rake / DDU-CNB",
+    "routeId": "RTE-DDU-CNB",
+    "status": "disrupted",
+    "delayMinutes": 210,
+    "currentStation": "MZP",
+    "nextStation": "PRYJ",
+    "healthStatus": "fault"
+  },
+  {
+    "id": "TRN-22436",
+    "trainNumber": "22436",
+    "name": "New Delhi - Varanasi Vande Bharat Express",
+    "routeId": "RTE-NDLS-BSB",
+    "status": "running",
+    "delayMinutes": 0,
+    "currentStation": "CNB",
+    "nextStation": "PRYJ",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12004",
+    "trainNumber": "12004",
+    "name": "New Delhi - Lucknow Shatabdi Express",
+    "routeId": "RTE-NDLS-LKO",
+    "status": "running",
+    "delayMinutes": 0,
+    "currentStation": "ALJN",
+    "nextStation": "CNB",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12555",
+    "trainNumber": "12555",
+    "name": "Gorakhpur - Hisar Gorakhdham Express",
+    "routeId": "RTE-GKP-HSR",
+    "status": "running",
+    "delayMinutes": 20,
+    "currentStation": "GD",
+    "nextStation": "LKO",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-22691",
+    "trainNumber": "22691",
+    "name": "KSR Bengaluru - Hazrat Nizamuddin Rajdhani",
+    "routeId": "RTE-SBC-NZM",
+    "status": "delayed",
+    "delayMinutes": 30,
+    "currentStation": "SC",
+    "nextStation": "KZJ",
+    "healthStatus": "healthy"
+  },
+  {
+    "id": "TRN-12229",
+    "trainNumber": "12229",
+    "name": "Lucknow - New Delhi Mail",
+    "routeId": "RTE-LKO-NDLS",
+    "status": "running",
+    "delayMinutes": 0,
+    "currentStation": "SPN",
+    "nextStation": "BE",
+    "healthStatus": "healthy"
+  }
+]

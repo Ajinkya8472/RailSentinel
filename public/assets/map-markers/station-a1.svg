@@ -1,0 +1,18 @@
+<!-- map-markers/station-a1.svg — A1 category major station marker -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 36" role="img" aria-label="A1 station marker">
+  <defs>
+    <filter id="drop-a1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1e40af" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Pin shape -->
+  <path d="M14 1 C7.4 1 2 6.4 2 13 C2 21 14 35 14 35 C14 35 26 21 26 13 C26 6.4 20.6 1 14 1 Z"
+        fill="#1e40af" filter="url(#drop-a1)"/>
+  <circle cx="14" cy="13" r="7" fill="#fff"/>
+  <!-- Station icon (building) -->
+  <rect x="9" y="10" width="10" height="7" rx="1" fill="#1e40af"/>
+  <rect x="11" y="12" width="2" height="3" rx="0.5" fill="#fff"/>
+  <rect x="15" y="12" width="2" height="3" rx="0.5" fill="#fff"/>
+  <!-- Roof -->
+  <path d="M8 10.5 L14 7 L20 10.5" fill="none" stroke="#1e40af" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

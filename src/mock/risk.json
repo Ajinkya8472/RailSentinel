@@ -1,0 +1,157 @@
+[
+  {
+    "id": "RSK-00112",
+    "score": 88,
+    "level": "critical",
+    "priorityBand": "immediate",
+    "confidence": 0.92,
+    "explanation": [
+      {
+        "factor": "Signal failure duration",
+        "contribution": 45,
+        "description": "Signal at DN track failed 35 minutes ago with no ETA for restoration."
+      },
+      {
+        "factor": "Platform occupancy forecast",
+        "contribution": 37,
+        "description": "Platform 4 forecast at 105% capacity in 30 minutes."
+      },
+      {
+        "factor": "Historical bottleneck",
+        "contribution": 6,
+        "description": "Location has a high probability of cascading delays when disrupted during peak hours."
+      }
+    ],
+    "sourceDomains": ["incident", "crowd", "historical"]
+  },
+  {
+    "id": "RSK-00113",
+    "score": 72,
+    "level": "high",
+    "priorityBand": "urgent",
+    "confidence": 0.85,
+    "explanation": [
+      {
+        "factor": "Pantograph Entanglement",
+        "contribution": 50,
+        "description": "Major OHE damage reported by loco pilot. Main line blocked."
+      },
+      {
+        "factor": "Schedule Conflict",
+        "contribution": 22,
+        "description": "3 premium trains (Rajdhani/Shatabdi) in trailing section will require immediate rerouting."
+      }
+    ],
+    "sourceDomains": ["incident", "schedule"]
+  },
+  {
+    "id": "RSK-00114",
+    "score": 48,
+    "level": "medium",
+    "priorityBand": "standard",
+    "confidence": 0.78,
+    "explanation": [
+      {
+        "factor": "Energy anomaly",
+        "contribution": 30,
+        "description": "Substation 4 showing 15% spike above baseline consumption over last 45 minutes."
+      },
+      {
+        "factor": "Weather forecast",
+        "contribution": 18,
+        "description": "Heavy rainfall predicted in the section which may compound electrical issues."
+      }
+    ],
+    "sourceDomains": ["energy", "weather"]
+  },
+  {
+    "id": "RSK-00115",
+    "score": 28,
+    "level": "low",
+    "priorityBand": "monitor",
+    "confidence": 0.65,
+    "explanation": [
+      {
+        "factor": "Minor schedule deviation",
+        "contribution": 20,
+        "description": "Train 12953 is running 15 minutes late, potential minor conflict at next junction."
+      },
+      {
+        "factor": "Platform crowding",
+        "contribution": 8,
+        "description": "Platform 2 density slightly elevated (60%) due to delayed arrival."
+      }
+    ],
+    "sourceDomains": ["schedule", "crowd"]
+  },
+  {
+    "id": "RSK-00116",
+    "score": 12,
+    "level": "minimal",
+    "priorityBand": "monitor",
+    "confidence": 0.95,
+    "explanation": [
+      {
+        "factor": "Routine telemetry check",
+        "contribution": 12,
+        "description": "All systems operating normally. Minor noise in sensor group B."
+      }
+    ],
+    "sourceDomains": ["sensor"]
+  },
+  {
+    "id": "RSK-00117",
+    "score": 65,
+    "level": "high",
+    "priorityBand": "urgent",
+    "confidence": 0.71,
+    "explanation": [
+      {
+        "factor": "Hot Axle Warning",
+        "contribution": 45,
+        "description": "Acoustic bearing detector triggered early warning for freight rake."
+      },
+      {
+        "factor": "Track condition",
+        "contribution": 20,
+        "description": "Upcoming section has temporary speed restriction (TSR) which complicates detachment."
+      }
+    ],
+    "sourceDomains": ["train", "track"]
+  },
+  {
+    "id": "RSK-00118",
+    "score": 85,
+    "level": "critical",
+    "priorityBand": "immediate",
+    "confidence": 0.89,
+    "explanation": [
+      {
+        "factor": "Route Relay Interlocking Failure",
+        "contribution": 60,
+        "description": "RRI panel unresponsive at major junction, halting all through traffic."
+      },
+      {
+        "factor": "System-wide cascading delays",
+        "contribution": 25,
+        "description": "Delay propagation model predicts gridlock within 45 minutes if manual piloting is not initiated."
+      }
+    ],
+    "sourceDomains": ["incident", "system", "schedule"]
+  },
+  {
+    "id": "RSK-00119",
+    "score": 42,
+    "level": "medium",
+    "priorityBand": "standard",
+    "confidence": 0.81,
+    "explanation": [
+      {
+        "factor": "Level Crossing Gate Malfunction",
+        "contribution": 42,
+        "description": "Gate cannot be locked. Trains are being piloted at 15 kmph causing local schedule degradation."
+      }
+    ],
+    "sourceDomains": ["level_crossing", "schedule"]
+  }
+]

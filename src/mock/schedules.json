@@ -1,0 +1,132 @@
+[
+  {
+    "id": "SCH-00201",
+    "type": "pathing",
+    "severity": "high",
+    "priority": "P2",
+    "status": "conflict",
+    "affectedTrainIds": ["TRN-12951", "TRN-12002"],
+    "impactEstimate": {
+      "delayMinutes": 45,
+      "cascadingAffected": 2
+    },
+    "resolutionStatus": "algorithmic_proposed"
+  },
+  {
+    "id": "SCH-00202",
+    "type": "platform",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "conflict",
+    "affectedTrainIds": ["TRN-12301", "TRN-12553", "TRN-12004"],
+    "impactEstimate": {
+      "delayMinutes": 120,
+      "cascadingAffected": 5
+    },
+    "resolutionStatus": "pending"
+  },
+  {
+    "id": "SCH-00203",
+    "type": "maintenance",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "at_risk",
+    "affectedTrainIds": ["TRN-12431"],
+    "impactEstimate": {
+      "delayMinutes": 30,
+      "cascadingAffected": 0
+    },
+    "resolutionStatus": "implemented"
+  },
+  {
+    "id": "SCH-00204",
+    "type": "crossing",
+    "severity": "high",
+    "priority": "P2",
+    "status": "conflict",
+    "affectedTrainIds": ["TRN-12834", "TRN-FREIGHT-44"],
+    "impactEstimate": {
+      "delayMinutes": 60,
+      "cascadingAffected": 3
+    },
+    "resolutionStatus": "operator_approved"
+  },
+  {
+    "id": "SCH-00205",
+    "type": "headway",
+    "severity": "low",
+    "priority": "P4",
+    "status": "at_risk",
+    "affectedTrainIds": ["TRN-22436", "TRN-12229"],
+    "impactEstimate": {
+      "delayMinutes": 15,
+      "cascadingAffected": 1
+    },
+    "resolutionStatus": "pending"
+  },
+  {
+    "id": "SCH-00206",
+    "type": "crew",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "disrupted",
+    "affectedTrainIds": ["TRN-12627"],
+    "impactEstimate": {
+      "delayMinutes": 45,
+      "cascadingAffected": 0
+    },
+    "resolutionStatus": "pending"
+  },
+  {
+    "id": "SCH-00207",
+    "type": "pathing",
+    "severity": "high",
+    "priority": "P2",
+    "status": "conflict",
+    "affectedTrainIds": ["TRN-12953", "TRN-22691"],
+    "impactEstimate": {
+      "delayMinutes": 55,
+      "cascadingAffected": 2
+    },
+    "resolutionStatus": "algorithmic_proposed"
+  },
+  {
+    "id": "SCH-00208",
+    "type": "platform",
+    "severity": "medium",
+    "priority": "P3",
+    "status": "at_risk",
+    "affectedTrainIds": ["TRN-12555"],
+    "impactEstimate": {
+      "delayMinutes": 20,
+      "cascadingAffected": 1
+    },
+    "resolutionStatus": "operator_rejected"
+  },
+  {
+    "id": "SCH-00209",
+    "type": "headway",
+    "severity": "low",
+    "priority": "P4",
+    "status": "resolved",
+    "affectedTrainIds": ["TRN-12302"],
+    "impactEstimate": {
+      "delayMinutes": 0,
+      "cascadingAffected": 0
+    },
+    "resolutionStatus": "implemented"
+  },
+  {
+    "id": "SCH-00210",
+    "type": "maintenance",
+    "severity": "critical",
+    "priority": "P1",
+    "status": "disrupted",
+    "affectedTrainIds": ["TRN-12424", "TRN-12802", "TRN-12137"],
+    "impactEstimate": {
+      "delayMinutes": 240,
+      "cascadingAffected": 8
+    },
+    "resolutionStatus": "pending"
+  }
+]

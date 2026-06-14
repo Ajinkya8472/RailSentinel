@@ -1,0 +1,134 @@
+<!doctype html>
+<!--
+  Purpose:
+  Vite + React application entry point for RailSentinel — the mission-critical
+  operational intelligence platform for railway networks.
+
+  This file is the single HTML document served by Vite's dev server and used
+  as the base template for the production build. It contains:
+
+    1. Responsive viewport meta tag
+    2. Accessibility-friendly lang, charset, and color-scheme defaults
+    3. Application title and description meta tags for SEO / tab labeling
+    4. theme-color meta for mobile browser chrome tinting
+    5. Preconnect hints for Google Fonts (Inter typeface)
+    6. Favicon placeholder link (replace with actual asset)
+    7. #root mount element for React
+
+  Dependencies:
+  - Vite build tool (resolves /src/main.jsx as the JS entry via <script type="module">)
+  - React DOM (mounts into #root)
+  - No inline JavaScript or CSS — all logic lives in /src
+
+  Architecture rules:
+  - No inline business logic
+  - No hardcoded API keys or environment values
+  - Vite injects the hashed JS/CSS bundles automatically at build time
+-->
+<html lang="en" dir="ltr">
+  <head>
+    <!-- ── Character encoding ─────────────────────────────────────────── -->
+    <meta charset="UTF-8" />
+
+    <!-- ── Responsive viewport ──────────────────────────────────────────
+         width=device-width : match the physical screen width
+         initial-scale=1    : 1:1 pixel ratio on first load
+         viewport-fit=cover : extend into safe-area on notched devices
+    ──────────────────────────────────────────────────────────────────── -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <!-- ── Color scheme ─────────────────────────────────────────────────
+         Declares dark-first preference so the OS/browser applies the
+         correct default scrollbar and input colors before JS loads.
+    ──────────────────────────────────────────────────────────────────── -->
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- ── Mobile browser chrome tinting ────────────────────────────── -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- ── Page title ───────────────────────────────────────────────── -->
+    <title>RailSentinel — Operational Intelligence Platform</title>
+
+    <!-- ── SEO / social meta ────────────────────────────────────────── -->
+    <meta
+      name="description"
+      content="RailSentinel: mission-critical real-time operational intelligence for railway networks — incidents, trains, crowd, energy, scheduling, and risk."
+    />
+    <meta name="application-name" content="RailSentinel" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- ── Open Graph (minimal) ─────────────────────────────────────── -->
+    <meta property="og:title"       content="RailSentinel" />
+    <meta property="og:description" content="Mission-critical operational intelligence for railway networks." />
+    <meta property="og:type"        content="website" />
+
+    <!-- ── Favicon ──────────────────────────────────────────────────── -->
+    <!--
+      Replace /favicon.svg with your actual icon asset.
+      SVG favicons are supported in all modern browsers.
+    -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon"            href="/favicon.ico" />
+    <link rel="apple-touch-icon"          href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/public/Favicon.png" />
+
+    <!-- ── Preconnect for Google Fonts (Inter) ──────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- ── Accessibility: no-JS fallback style ──────────────────────── -->
+    <noscript>
+      <style>
+        body::before {
+          content: "RailSentinel requires JavaScript to run. Please enable JavaScript in your browser.";
+          display: block;
+          padding: 2rem;
+          font-family: system-ui, sans-serif;
+          font-size: 1rem;
+          background: #0f172a;
+          color: #f8fafc;
+          text-align: center;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <body>
+    <!--
+      #root — React mount target.
+
+      aria-label provides a meaningful landmark for screen readers before
+      React renders and sets the proper ARIA tree.
+      The "loading" text is replaced immediately by React on mount.
+    -->
+    <div
+      id="root"
+      role="main"
+      aria-label="RailSentinel application loading"
+    >
+      <!--
+        Inline loading indicator shown before the JS bundle executes.
+        React will replace this content on first render.
+      -->
+      <noscript>
+        <p style="padding:2rem;font-family:system-ui,sans-serif;color:#94a3b8;">
+          Loading RailSentinel…
+        </p>
+      </noscript>
+    </div>
+
+    <!--
+      Vite module entry point.
+      Vite resolves this path to /src/main.jsx and injects the correct
+      hashed bundle URL during the production build automatically.
+    -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

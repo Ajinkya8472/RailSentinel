@@ -1,0 +1,7 @@
+<!-- map-markers/station-b.svg — Category B/C station marker (smaller) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 26" role="img" aria-label="B category station marker">
+  <path d="M10 1 C5.6 1 2 4.6 2 9 C2 14.5 10 25 10 25 C10 25 18 14.5 18 9 C18 4.6 14.4 1 10 1 Z"
+        fill="#64748b"/>
+  <circle cx="10" cy="9" r="5" fill="#fff"/>
+  <circle cx="10" cy="9" r="2.5" fill="#64748b"/>
+</svg>

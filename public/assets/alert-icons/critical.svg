@@ -1,0 +1,6 @@
+<!-- alert-icons/critical.svg — bright red siren icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Critical alert">
+  <circle cx="16" cy="16" r="15" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="1.5"/>
+  <path d="M16 7 L17.8 14h4.2l-3.4 2.5 1.3 4L16 18l-3.9 2.5 1.3-4L10 14h4.2Z" fill="#ef4444"/>
+  <rect x="15" y="21" width="2" height="2" rx="1" fill="#ef4444"/>
+</svg>

@@ -1,0 +1,872 @@
+{
+  "_meta": {
+    "description": "RailSentinel mock dataset — Indian railway network (stations + routes + zones)",
+    "version": "1.0.0",
+    "generatedAt": "2026-06-10T05:32:00Z",
+    "coordinateSystem": "WGS84",
+    "totalStations": 60,
+    "totalRoutes": 42,
+    "totalZones": 18,
+    "fields": {
+      "stations": ["id","name","code","zone","state","city","latitude","longitude","platformCount","category","electrified","type","dailyTrainCount","dailyPassengerCount"],
+      "routes": ["id","name","code","zone","sourceStationId","sourceStationCode","destinationStationId","destinationStationCode","distanceKm","estimatedDurationHours","status","trackType","electrified","activeTrainCount","scheduledTrainCount","intermediateStationIds","waypoints"],
+      "zones": ["id","name","code","headquarters","statesCovered","zoneColor"]
+    }
+  },
+
+  "zones": [
+    { "id": "Z-01", "name": "Central Railway",             "code": "CR",   "headquarters": "Mumbai CSMT",    "statesCovered": ["Maharashtra","Madhya Pradesh","Karnataka"],                   "zoneColor": "#e74c3c" },
+    { "id": "Z-02", "name": "Eastern Railway",             "code": "ER",   "headquarters": "Kolkata",        "statesCovered": ["West Bengal","Bihar","Jharkhand"],                           "zoneColor": "#2ecc71" },
+    { "id": "Z-03", "name": "Northern Railway",            "code": "NR",   "headquarters": "New Delhi",      "statesCovered": ["Delhi","Punjab","Haryana","Uttar Pradesh","Uttarakhand","Himachal Pradesh","Rajasthan"], "zoneColor": "#3498db" },
+    { "id": "Z-04", "name": "North Eastern Railway",       "code": "NER",  "headquarters": "Gorakhpur",      "statesCovered": ["Uttar Pradesh","Bihar"],                                     "zoneColor": "#9b59b6" },
+    { "id": "Z-05", "name": "Northeast Frontier Railway",  "code": "NFR",  "headquarters": "Guwahati",       "statesCovered": ["Assam","West Bengal","Sikkim","Arunachal Pradesh","Meghalaya","Nagaland","Tripura","Manipur","Mizoram"], "zoneColor": "#1abc9c" },
+    { "id": "Z-06", "name": "Southern Railway",            "code": "SR",   "headquarters": "Chennai",        "statesCovered": ["Tamil Nadu","Kerala","Puducherry"],                          "zoneColor": "#e67e22" },
+    { "id": "Z-07", "name": "South Central Railway",       "code": "SCR",  "headquarters": "Secunderabad",   "statesCovered": ["Andhra Pradesh","Telangana","Maharashtra"],                  "zoneColor": "#f39c12" },
+    { "id": "Z-08", "name": "South Eastern Railway",       "code": "SER",  "headquarters": "Kolkata",        "statesCovered": ["Jharkhand","West Bengal","Odisha"],                          "zoneColor": "#27ae60" },
+    { "id": "Z-09", "name": "Western Railway",             "code": "WR",   "headquarters": "Mumbai Central", "statesCovered": ["Gujarat","Rajasthan","Madhya Pradesh","Maharashtra"],        "zoneColor": "#2980b9" },
+    { "id": "Z-10", "name": "North Central Railway",       "code": "NCR",  "headquarters": "Allahabad",      "statesCovered": ["Uttar Pradesh","Madhya Pradesh","Rajasthan"],                "zoneColor": "#8e44ad" },
+    { "id": "Z-11", "name": "North Western Railway",       "code": "NWR",  "headquarters": "Jaipur",         "statesCovered": ["Rajasthan","Punjab","Haryana"],                              "zoneColor": "#d35400" },
+    { "id": "Z-12", "name": "South Western Railway",       "code": "SWR",  "headquarters": "Hubli",          "statesCovered": ["Karnataka","Goa"],                                           "zoneColor": "#16a085" },
+    { "id": "Z-13", "name": "West Central Railway",        "code": "WCR",  "headquarters": "Jabalpur",       "statesCovered": ["Madhya Pradesh","Rajasthan","Uttar Pradesh"],                "zoneColor": "#c0392b" },
+    { "id": "Z-14", "name": "East Central Railway",        "code": "ECR",  "headquarters": "Hajipur",        "statesCovered": ["Bihar","Jharkhand","Uttar Pradesh"],                         "zoneColor": "#7f8c8d" },
+    { "id": "Z-15", "name": "East Coast Railway",          "code": "ECoR", "headquarters": "Bhubaneswar",    "statesCovered": ["Odisha","Andhra Pradesh","Chhattisgarh"],                    "zoneColor": "#2c3e50" },
+    { "id": "Z-16", "name": "Konkan Railway",              "code": "KR",   "headquarters": "Navi Mumbai",    "statesCovered": ["Maharashtra","Goa","Karnataka","Kerala"],                    "zoneColor": "#27ae60" },
+    { "id": "Z-17", "name": "Metro Railway Kolkata",       "code": "MR",   "headquarters": "Kolkata",        "statesCovered": ["West Bengal"],                                              "zoneColor": "#f1c40f" },
+    { "id": "Z-18", "name": "South Coast Railway",         "code": "SCoR", "headquarters": "Visakhapatnam", "statesCovered": ["Andhra Pradesh"],                                           "zoneColor": "#e91e63" }
+  ],
+
+  "stations": [
+    {
+      "id": "ST-001", "name": "New Delhi",               "code": "NDLS", "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Delhi",           "city": "New Delhi",
+      "latitude": 28.6419,  "longitude": 77.2194,  "platformCount": 16, "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 320, "dailyPassengerCount": 450000
+    },
+    {
+      "id": "ST-002", "name": "Mumbai Central",          "code": "MMCT", "zone": "Western Railway",            "zoneCode": "WR",   "state": "Maharashtra",     "city": "Mumbai",
+      "latitude": 18.9691,  "longitude": 72.8193,  "platformCount": 8,  "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 120, "dailyPassengerCount": 180000
+    },
+    {
+      "id": "ST-003", "name": "Mumbai CSMT",             "code": "CSMT", "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Mumbai",
+      "latitude": 18.9398,  "longitude": 72.8355,  "platformCount": 18, "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 280, "dailyPassengerCount": 500000
+    },
+    {
+      "id": "ST-004", "name": "Howrah Junction",         "code": "HWH",  "zone": "Eastern Railway",            "zoneCode": "ER",   "state": "West Bengal",     "city": "Howrah",
+      "latitude": 22.5851,  "longitude": 88.3426,  "platformCount": 23, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 350, "dailyPassengerCount": 600000
+    },
+    {
+      "id": "ST-005", "name": "Chennai Central",         "code": "MAS",  "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Tamil Nadu",      "city": "Chennai",
+      "latitude": 13.0827,  "longitude": 80.2707,  "platformCount": 17, "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 220, "dailyPassengerCount": 380000
+    },
+    {
+      "id": "ST-006", "name": "Bengaluru City Junction", "code": "SBC",  "zone": "South Western Railway",      "zoneCode": "SWR",  "state": "Karnataka",       "city": "Bengaluru",
+      "latitude": 12.9783,  "longitude": 77.5700,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 160, "dailyPassengerCount": 250000
+    },
+    {
+      "id": "ST-007", "name": "Hyderabad Deccan",        "code": "HYB",  "zone": "South Central Railway",      "zoneCode": "SCR",  "state": "Telangana",       "city": "Hyderabad",
+      "latitude": 17.3850,  "longitude": 78.4867,  "platformCount": 7,  "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 100, "dailyPassengerCount": 140000
+    },
+    {
+      "id": "ST-008", "name": "Secunderabad Junction",   "code": "SC",   "zone": "South Central Railway",      "zoneCode": "SCR",  "state": "Telangana",       "city": "Hyderabad",
+      "latitude": 17.4399,  "longitude": 78.5006,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 180, "dailyPassengerCount": 230000
+    },
+    {
+      "id": "ST-009", "name": "Ahmedabad Junction",      "code": "ADI",  "zone": "Western Railway",            "zoneCode": "WR",   "state": "Gujarat",         "city": "Ahmedabad",
+      "latitude": 23.0225,  "longitude": 72.5714,  "platformCount": 12, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 190, "dailyPassengerCount": 280000
+    },
+    {
+      "id": "ST-010", "name": "Pune Junction",           "code": "PUNE", "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Pune",
+      "latitude": 18.5284,  "longitude": 73.8742,  "platformCount": 6,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 130, "dailyPassengerCount": 180000
+    },
+    {
+      "id": "ST-011", "name": "Jaipur Junction",         "code": "JP",   "zone": "North Western Railway",      "zoneCode": "NWR",  "state": "Rajasthan",       "city": "Jaipur",
+      "latitude": 26.9124,  "longitude": 75.7873,  "platformCount": 7,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 110, "dailyPassengerCount": 160000
+    },
+    {
+      "id": "ST-012", "name": "Lucknow Junction",        "code": "LKO",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Uttar Pradesh",   "city": "Lucknow",
+      "latitude": 26.8467,  "longitude": 80.9462,  "platformCount": 9,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 140, "dailyPassengerCount": 200000
+    },
+    {
+      "id": "ST-013", "name": "Patna Junction",          "code": "PNBE", "zone": "East Central Railway",       "zoneCode": "ECR",  "state": "Bihar",           "city": "Patna",
+      "latitude": 25.6090,  "longitude": 85.1235,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 120, "dailyPassengerCount": 170000
+    },
+    {
+      "id": "ST-014", "name": "Varanasi Junction",       "code": "BSB",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Uttar Pradesh",   "city": "Varanasi",
+      "latitude": 25.3176,  "longitude": 82.9739,  "platformCount": 9,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 100, "dailyPassengerCount": 140000
+    },
+    {
+      "id": "ST-015", "name": "Amritsar Junction",       "code": "ASR",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Punjab",          "city": "Amritsar",
+      "latitude": 31.6340,  "longitude": 74.8723,  "platformCount": 6,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 80,  "dailyPassengerCount": 110000
+    },
+    {
+      "id": "ST-016", "name": "Nagpur Junction",         "code": "NGP",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Nagpur",
+      "latitude": 21.1458,  "longitude": 79.0882,  "platformCount": 8,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 100, "dailyPassengerCount": 130000
+    },
+    {
+      "id": "ST-017", "name": "Bhopal Junction",         "code": "BPL",  "zone": "West Central Railway",       "zoneCode": "WCR",  "state": "Madhya Pradesh",  "city": "Bhopal",
+      "latitude": 23.2599,  "longitude": 77.4126,  "platformCount": 6,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 80,  "dailyPassengerCount": 100000
+    },
+    {
+      "id": "ST-018", "name": "Guwahati",                "code": "GHY",  "zone": "Northeast Frontier Railway", "zoneCode": "NFR",  "state": "Assam",           "city": "Guwahati",
+      "latitude": 26.1445,  "longitude": 91.7362,  "platformCount": 6,  "category": "A1", "electrified": false, "type": "junction",     "dailyTrainCount": 60,  "dailyPassengerCount": 80000
+    },
+    {
+      "id": "ST-019", "name": "Bhubaneswar",             "code": "BBS",  "zone": "East Coast Railway",         "zoneCode": "ECoR", "state": "Odisha",          "city": "Bhubaneswar",
+      "latitude": 20.2961,  "longitude": 85.8189,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 70,  "dailyPassengerCount": 90000
+    },
+    {
+      "id": "ST-020", "name": "Visakhapatnam Junction",  "code": "VSKP", "zone": "South Coast Railway",        "zoneCode": "SCoR", "state": "Andhra Pradesh",  "city": "Visakhapatnam",
+      "latitude": 17.7231,  "longitude": 83.3012,  "platformCount": 9,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 90,  "dailyPassengerCount": 110000
+    },
+    {
+      "id": "ST-021", "name": "Madgaon Junction",        "code": "MAO",  "zone": "Konkan Railway",             "zoneCode": "KR",   "state": "Goa",             "city": "Margao",
+      "latitude": 15.3528,  "longitude": 73.9978,  "platformCount": 4,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 30,  "dailyPassengerCount": 35000
+    },
+    {
+      "id": "ST-022", "name": "Coimbatore Junction",     "code": "CBE",  "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Tamil Nadu",      "city": "Coimbatore",
+      "latitude": 11.0168,  "longitude": 76.9558,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 60,  "dailyPassengerCount": 75000
+    },
+    {
+      "id": "ST-023", "name": "Madurai Junction",        "code": "MDU",  "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Tamil Nadu",      "city": "Madurai",
+      "latitude": 9.9195,   "longitude": 78.1194,  "platformCount": 7,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 75,  "dailyPassengerCount": 100000
+    },
+    {
+      "id": "ST-024", "name": "Ernakulam Junction",      "code": "ERS",  "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Kerala",          "city": "Kochi",
+      "latitude": 9.9816,   "longitude": 76.2999,  "platformCount": 5,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 50,  "dailyPassengerCount": 70000
+    },
+    {
+      "id": "ST-025", "name": "Chandigarh",              "code": "CDG",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Punjab/Haryana",  "city": "Chandigarh",
+      "latitude": 30.7333,  "longitude": 76.7794,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 50,  "dailyPassengerCount": 60000
+    },
+    {
+      "id": "ST-026", "name": "Agra Cantt",              "code": "AGC",  "zone": "North Central Railway",      "zoneCode": "NCR",  "state": "Uttar Pradesh",   "city": "Agra",
+      "latitude": 27.1592,  "longitude": 78.0001,  "platformCount": 6,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 80,  "dailyPassengerCount": 120000
+    },
+    {
+      "id": "ST-027", "name": "Jodhpur Junction",        "code": "JU",   "zone": "North Western Railway",      "zoneCode": "NWR",  "state": "Rajasthan",       "city": "Jodhpur",
+      "latitude": 26.2789,  "longitude": 73.0243,  "platformCount": 5,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 50,  "dailyPassengerCount": 60000
+    },
+    {
+      "id": "ST-028", "name": "Surat",                   "code": "ST",   "zone": "Western Railway",            "zoneCode": "WR",   "state": "Gujarat",         "city": "Surat",
+      "latitude": 21.1702,  "longitude": 72.8311,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 90,  "dailyPassengerCount": 130000
+    },
+    {
+      "id": "ST-029", "name": "Ranchi Junction",         "code": "RNC",  "zone": "South Eastern Railway",      "zoneCode": "SER",  "state": "Jharkhand",       "city": "Ranchi",
+      "latitude": 23.3441,  "longitude": 85.3096,  "platformCount": 5,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 45,  "dailyPassengerCount": 55000
+    },
+    {
+      "id": "ST-030", "name": "Dehradun",                "code": "DDN",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Uttarakhand",     "city": "Dehradun",
+      "latitude": 30.3165,  "longitude": 78.0322,  "platformCount": 4,  "category": "A",  "electrified": false, "type": "terminus",     "dailyTrainCount": 35,  "dailyPassengerCount": 45000
+    },
+    {
+      "id": "ST-031", "name": "Gorakhpur Junction",      "code": "GKP",  "zone": "North Eastern Railway",      "zoneCode": "NER",  "state": "Uttar Pradesh",   "city": "Gorakhpur",
+      "latitude": 26.7606,  "longitude": 83.3732,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 100, "dailyPassengerCount": 130000
+    },
+    {
+      "id": "ST-032", "name": "Mysuru Junction",         "code": "MYS",  "zone": "South Western Railway",      "zoneCode": "SWR",  "state": "Karnataka",       "city": "Mysuru",
+      "latitude": 12.3051,  "longitude": 76.6551,  "platformCount": 7,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 70000
+    },
+    {
+      "id": "ST-033", "name": "Ajmer Junction",          "code": "AII",  "zone": "North Western Railway",      "zoneCode": "NWR",  "state": "Rajasthan",       "city": "Ajmer",
+      "latitude": 26.4499,  "longitude": 74.6399,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 65000
+    },
+    {
+      "id": "ST-034", "name": "Dibrugarh Town",          "code": "DBRG", "zone": "Northeast Frontier Railway", "zoneCode": "NFR",  "state": "Assam",           "city": "Dibrugarh",
+      "latitude": 27.4728,  "longitude": 94.9120,  "platformCount": 3,  "category": "B",  "electrified": false, "type": "terminus",     "dailyTrainCount": 18,  "dailyPassengerCount": 20000
+    },
+    {
+      "id": "ST-035", "name": "Lokmanya Tilak Terminus", "code": "LTT",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Mumbai",
+      "latitude": 19.0631,  "longitude": 72.9224,  "platformCount": 8,  "category": "A1", "electrified": true,  "type": "terminus",     "dailyTrainCount": 130, "dailyPassengerCount": 200000
+    },
+    {
+      "id": "ST-036", "name": "Solapur",                 "code": "SUR",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Solapur",
+      "latitude": 17.6868,  "longitude": 75.9052,  "platformCount": 5,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 40,  "dailyPassengerCount": 50000
+    },
+    {
+      "id": "ST-037", "name": "Kolhapur CSMT",           "code": "KOP",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Kolhapur",
+      "latitude": 16.6974,  "longitude": 74.2237,  "platformCount": 4,  "category": "A",  "electrified": false, "type": "terminus",     "dailyTrainCount": 30,  "dailyPassengerCount": 35000
+    },
+    {
+      "id": "ST-038", "name": "Allahabad Junction",      "code": "ALD",  "zone": "North Central Railway",      "zoneCode": "NCR",  "state": "Uttar Pradesh",   "city": "Prayagraj",
+      "latitude": 25.4358,  "longitude": 81.8463,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 120, "dailyPassengerCount": 160000
+    },
+    {
+      "id": "ST-039", "name": "Jabalpur Junction",       "code": "JBP",  "zone": "West Central Railway",       "zoneCode": "WCR",  "state": "Madhya Pradesh",  "city": "Jabalpur",
+      "latitude": 23.1815,  "longitude": 79.9864,  "platformCount": 6,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 60,  "dailyPassengerCount": 75000
+    },
+    {
+      "id": "ST-040", "name": "Kota Junction",           "code": "KOTA", "zone": "West Central Railway",       "zoneCode": "WCR",  "state": "Rajasthan",       "city": "Kota",
+      "latitude": 25.1760,  "longitude": 75.8550,  "platformCount": 7,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 75,  "dailyPassengerCount": 95000
+    },
+    {
+      "id": "ST-041", "name": "Hajipur Junction",        "code": "HJP",  "zone": "East Central Railway",       "zoneCode": "ECR",  "state": "Bihar",           "city": "Hajipur",
+      "latitude": 25.6877,  "longitude": 85.2091,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 65000
+    },
+    {
+      "id": "ST-042", "name": "Hubli Junction",          "code": "UBL",  "zone": "South Western Railway",      "zoneCode": "SWR",  "state": "Karnataka",       "city": "Hubli",
+      "latitude": 15.3647,  "longitude": 75.1240,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 65000
+    },
+    {
+      "id": "ST-043", "name": "Manmad Junction",         "code": "MMR",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Manmad",
+      "latitude": 20.2600,  "longitude": 74.4300,  "platformCount": 5,  "category": "B",  "electrified": true,  "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 45000
+    },
+    {
+      "id": "ST-044", "name": "Tatanagar Junction",      "code": "TATA", "zone": "South Eastern Railway",      "zoneCode": "SER",  "state": "Jharkhand",       "city": "Jamshedpur",
+      "latitude": 22.7848,  "longitude": 86.1855,  "platformCount": 6,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 70,  "dailyPassengerCount": 80000
+    },
+    {
+      "id": "ST-045", "name": "Kharagpur Junction",      "code": "KGP",  "zone": "South Eastern Railway",      "zoneCode": "SER",  "state": "West Bengal",     "city": "Kharagpur",
+      "latitude": 22.3460,  "longitude": 87.3198,  "platformCount": 12, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 120, "dailyPassengerCount": 150000
+    },
+    {
+      "id": "ST-046", "name": "Vijayawada Junction",     "code": "BZA",  "zone": "South Coast Railway",        "zoneCode": "SCoR", "state": "Andhra Pradesh",  "city": "Vijayawada",
+      "latitude": 16.5193,  "longitude": 80.6305,  "platformCount": 10, "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 120, "dailyPassengerCount": 160000
+    },
+    {
+      "id": "ST-047", "name": "Tirupati",                "code": "TPTY", "zone": "South Central Railway",      "zoneCode": "SCR",  "state": "Andhra Pradesh",  "city": "Tirupati",
+      "latitude": 13.6288,  "longitude": 79.4192,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 50,  "dailyPassengerCount": 80000
+    },
+    {
+      "id": "ST-048", "name": "Thiruvananthapuram Central", "code": "TVC", "zone": "Southern Railway",         "zoneCode": "SR",   "state": "Kerala",          "city": "Thiruvananthapuram",
+      "latitude": 8.4855,   "longitude": 76.9492,  "platformCount": 5,  "category": "A1", "electrified": false, "type": "terminus",     "dailyTrainCount": 60,  "dailyPassengerCount": 80000
+    },
+    {
+      "id": "ST-049", "name": "Agartala",                "code": "AGTL", "zone": "Northeast Frontier Railway", "zoneCode": "NFR",  "state": "Tripura",         "city": "Agartala",
+      "latitude": 23.8313,  "longitude": 91.2791,  "platformCount": 2,  "category": "C",  "electrified": false, "type": "terminus",     "dailyTrainCount": 8,   "dailyPassengerCount": 10000
+    },
+    {
+      "id": "ST-050", "name": "Shimla",                  "code": "SML",  "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Himachal Pradesh", "city": "Shimla",
+      "latitude": 31.1048,  "longitude": 77.1734,  "platformCount": 2,  "category": "C",  "electrified": false, "type": "terminus",     "dailyTrainCount": 5,   "dailyPassengerCount": 6000
+    },
+    {
+      "id": "ST-051", "name": "Vadodara Junction",       "code": "BRC",  "zone": "Western Railway",            "zoneCode": "WR",   "state": "Gujarat",         "city": "Vadodara",
+      "latitude": 22.3072,  "longitude": 73.1812,  "platformCount": 9,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 140, "dailyPassengerCount": 200000
+    },
+    {
+      "id": "ST-052", "name": "Raipur Junction",         "code": "R",    "zone": "East Coast Railway",         "zoneCode": "ECoR", "state": "Chhattisgarh",    "city": "Raipur",
+      "latitude": 21.2514,  "longitude": 81.6296,  "platformCount": 7,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 80,  "dailyPassengerCount": 100000
+    },
+    {
+      "id": "ST-053", "name": "Itarsi Junction",         "code": "ET",   "zone": "West Central Railway",       "zoneCode": "WCR",  "state": "Madhya Pradesh",  "city": "Itarsi",
+      "latitude": 22.6183,  "longitude": 77.7636,  "platformCount": 8,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 130, "dailyPassengerCount": 90000
+    },
+    {
+      "id": "ST-054", "name": "Mathura Junction",        "code": "MTJ",  "zone": "North Central Railway",      "zoneCode": "NCR",  "state": "Uttar Pradesh",   "city": "Mathura",
+      "latitude": 27.4924,  "longitude": 77.6737,  "platformCount": 8,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 110, "dailyPassengerCount": 140000
+    },
+    {
+      "id": "ST-055", "name": "Gwalior Junction",        "code": "GWL",  "zone": "North Central Railway",      "zoneCode": "NCR",  "state": "Madhya Pradesh",  "city": "Gwalior",
+      "latitude": 26.2183,  "longitude": 78.1828,  "platformCount": 6,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 75,  "dailyPassengerCount": 90000
+    },
+    {
+      "id": "ST-056", "name": "Bhusaval Junction",       "code": "BSL",  "zone": "Central Railway",            "zoneCode": "CR",   "state": "Maharashtra",     "city": "Bhusaval",
+      "latitude": 21.0440,  "longitude": 75.7892,  "platformCount": 7,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 95,  "dailyPassengerCount": 80000
+    },
+    {
+      "id": "ST-057", "name": "Mughal Sarai Junction",   "code": "MGS",  "zone": "East Central Railway",       "zoneCode": "ECR",  "state": "Uttar Pradesh",   "city": "Chandauli",
+      "latitude": 25.2777,  "longitude": 83.1165,  "platformCount": 8,  "category": "A1", "electrified": true,  "type": "junction",     "dailyTrainCount": 130, "dailyPassengerCount": 120000
+    },
+    {
+      "id": "ST-058", "name": "Bareilly Junction",       "code": "BE",   "zone": "Northern Railway",           "zoneCode": "NR",   "state": "Uttar Pradesh",   "city": "Bareilly",
+      "latitude": 28.3670,  "longitude": 79.4304,  "platformCount": 6,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 70,  "dailyPassengerCount": 85000
+    },
+    {
+      "id": "ST-059", "name": "Salem Junction",          "code": "SA",   "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Tamil Nadu",      "city": "Salem",
+      "latitude": 11.6643,  "longitude": 78.1460,  "platformCount": 5,  "category": "A",  "electrified": true,  "type": "junction",     "dailyTrainCount": 60,  "dailyPassengerCount": 70000
+    },
+    {
+      "id": "ST-060", "name": "Shoranur Junction",       "code": "SRR",  "zone": "Southern Railway",           "zoneCode": "SR",   "state": "Kerala",          "city": "Palakkad",
+      "latitude": 10.7669,  "longitude": 76.2826,  "platformCount": 5,  "category": "A",  "electrified": false, "type": "junction",     "dailyTrainCount": 55,  "dailyPassengerCount": 65000
+    }
+  ],
+
+  "routes": [
+    {
+      "id": "RT-001", "name": "Mumbai–Delhi Rajdhani Corridor",         "code": "WR-MMCT-NDLS",
+      "zone": "Western Railway",     "zoneCode": "WR",
+      "sourceStationId": "ST-002",   "sourceStationCode": "MMCT",
+      "destinationStationId": "ST-001", "destinationStationCode": "NDLS",
+      "distanceKm": 1384, "estimatedDurationHours": 15.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 8, "scheduledTrainCount": 12,
+      "intermediateStationIds": ["ST-028", "ST-051", "ST-009", "ST-040", "ST-017", "ST-053"],
+      "waypoints": [
+        { "lat": 18.9691, "lng": 72.8193 }, { "lat": 21.1702, "lng": 72.8311 },
+        { "lat": 22.3072, "lng": 73.1812 }, { "lat": 23.0225, "lng": 72.5714 },
+        { "lat": 25.1760, "lng": 75.8550 }, { "lat": 23.2599, "lng": 77.4126 },
+        { "lat": 22.6183, "lng": 77.7636 }, { "lat": 28.6419, "lng": 77.2194 }
+      ]
+    },
+    {
+      "id": "RT-002", "name": "Delhi–Kolkata Main Line",                "code": "ER-NDLS-HWH",
+      "zone": "Eastern Railway",     "zoneCode": "ER",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-004", "destinationStationCode": "HWH",
+      "distanceKm": 1441, "estimatedDurationHours": 17.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 11, "scheduledTrainCount": 16,
+      "intermediateStationIds": ["ST-026", "ST-054", "ST-055", "ST-038", "ST-014", "ST-057", "ST-013", "ST-041", "ST-045"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 27.1592, "lng": 78.0001 },
+        { "lat": 27.4924, "lng": 77.6737 }, { "lat": 26.2183, "lng": 78.1828 },
+        { "lat": 25.4358, "lng": 81.8463 }, { "lat": 25.3176, "lng": 82.9739 },
+        { "lat": 25.2777, "lng": 83.1165 }, { "lat": 25.6090, "lng": 85.1235 },
+        { "lat": 25.6877, "lng": 85.2091 }, { "lat": 22.3460, "lng": 87.3198 },
+        { "lat": 22.5851, "lng": 88.3426 }
+      ]
+    },
+    {
+      "id": "RT-003", "name": "Delhi–Chennai Grand Trunk Corridor",     "code": "SR-NDLS-MAS",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-005", "destinationStationCode": "MAS",
+      "distanceKm": 2194, "estimatedDurationHours": 28.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 6, "scheduledTrainCount": 9,
+      "intermediateStationIds": ["ST-026", "ST-017", "ST-016", "ST-007", "ST-046"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 27.1592, "lng": 78.0001 },
+        { "lat": 23.2599, "lng": 77.4126 }, { "lat": 21.1458, "lng": 79.0882 },
+        { "lat": 17.3850, "lng": 78.4867 }, { "lat": 16.5193, "lng": 80.6305 },
+        { "lat": 13.0827, "lng": 80.2707 }
+      ]
+    },
+    {
+      "id": "RT-004", "name": "Mumbai–Pune Deccan Corridor",            "code": "CR-CSMT-PUNE",
+      "zone": "Central Railway",     "zoneCode": "CR",
+      "sourceStationId": "ST-003",   "sourceStationCode": "CSMT",
+      "destinationStationId": "ST-010", "destinationStationCode": "PUNE",
+      "distanceKm": 192, "estimatedDurationHours": 3.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 18, "scheduledTrainCount": 24,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 18.9398, "lng": 72.8355 }, { "lat": 18.5284, "lng": 73.8742 }
+      ]
+    },
+    {
+      "id": "RT-005", "name": "Delhi–Amritsar Shatabdi Corridor",       "code": "NR-NDLS-ASR",
+      "zone": "Northern Railway",    "zoneCode": "NR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-015", "destinationStationCode": "ASR",
+      "distanceKm": 449, "estimatedDurationHours": 6.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": ["ST-025"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 30.7333, "lng": 76.7794 },
+        { "lat": 31.6340, "lng": 74.8723 }
+      ]
+    },
+    {
+      "id": "RT-006", "name": "Kolkata–Chennai Coromandel Corridor",    "code": "SER-HWH-MAS",
+      "zone": "South Eastern Railway","zoneCode": "SER",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-005", "destinationStationCode": "MAS",
+      "distanceKm": 1663, "estimatedDurationHours": 26.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 5, "scheduledTrainCount": 8,
+      "intermediateStationIds": ["ST-045", "ST-019", "ST-020", "ST-046"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 22.3460, "lng": 87.3198 },
+        { "lat": 20.2961, "lng": 85.8189 }, { "lat": 17.7231, "lng": 83.3012 },
+        { "lat": 16.5193, "lng": 80.6305 }, { "lat": 13.0827, "lng": 80.2707 }
+      ]
+    },
+    {
+      "id": "RT-007", "name": "Mumbai–Ahmedabad Shatabdi Corridor",     "code": "WR-MMCT-ADI",
+      "zone": "Western Railway",     "zoneCode": "WR",
+      "sourceStationId": "ST-002",   "sourceStationCode": "MMCT",
+      "destinationStationId": "ST-009", "destinationStationCode": "ADI",
+      "distanceKm": 493, "estimatedDurationHours": 6.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 9, "scheduledTrainCount": 14,
+      "intermediateStationIds": ["ST-028", "ST-051"],
+      "waypoints": [
+        { "lat": 18.9691, "lng": 72.8193 }, { "lat": 21.1702, "lng": 72.8311 },
+        { "lat": 22.3072, "lng": 73.1812 }, { "lat": 23.0225, "lng": 72.5714 }
+      ]
+    },
+    {
+      "id": "RT-008", "name": "Bengaluru–Chennai Shatabdi Corridor",    "code": "SR-SBC-MAS",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-006",   "sourceStationCode": "SBC",
+      "destinationStationId": "ST-005", "destinationStationCode": "MAS",
+      "distanceKm": 362, "estimatedDurationHours": 5.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 10, "scheduledTrainCount": 14,
+      "intermediateStationIds": ["ST-059"],
+      "waypoints": [
+        { "lat": 12.9783, "lng": 77.5700 }, { "lat": 11.6643, "lng": 78.1460 },
+        { "lat": 13.0827, "lng": 80.2707 }
+      ]
+    },
+    {
+      "id": "RT-009", "name": "Delhi–Jaipur Express Corridor",          "code": "NWR-NDLS-JP",
+      "zone": "North Western Railway","zoneCode": "NWR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-011", "destinationStationCode": "JP",
+      "distanceKm": 308, "estimatedDurationHours": 4.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 13, "scheduledTrainCount": 18,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 26.9124, "lng": 75.7873 }
+      ]
+    },
+    {
+      "id": "RT-010", "name": "Hyderabad–Mumbai Express Corridor",      "code": "SCR-HYB-CSMT",
+      "zone": "South Central Railway","zoneCode": "SCR",
+      "sourceStationId": "ST-007",   "sourceStationCode": "HYB",
+      "destinationStationId": "ST-003", "destinationStationCode": "CSMT",
+      "distanceKm": 717, "estimatedDurationHours": 13.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 6, "scheduledTrainCount": 9,
+      "intermediateStationIds": ["ST-043", "ST-016"],
+      "waypoints": [
+        { "lat": 17.3850, "lng": 78.4867 }, { "lat": 20.2600, "lng": 74.4300 },
+        { "lat": 21.1458, "lng": 79.0882 }, { "lat": 18.9398, "lng": 72.8355 }
+      ]
+    },
+    {
+      "id": "RT-011", "name": "Mumbai–Goa Konkan Corridor",             "code": "KR-CSMT-MAO",
+      "zone": "Konkan Railway",      "zoneCode": "KR",
+      "sourceStationId": "ST-003",   "sourceStationCode": "CSMT",
+      "destinationStationId": "ST-021", "destinationStationCode": "MAO",
+      "distanceKm": 756, "estimatedDurationHours": 9.5,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 18.9398, "lng": 72.8355 }, { "lat": 17.3387, "lng": 73.9041 },
+        { "lat": 15.3528, "lng": 73.9978 }
+      ]
+    },
+    {
+      "id": "RT-012", "name": "Delhi–Lucknow Shatabdi Corridor",        "code": "NR-NDLS-LKO",
+      "zone": "Northern Railway",    "zoneCode": "NR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-012", "destinationStationCode": "LKO",
+      "distanceKm": 503, "estimatedDurationHours": 6.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 9, "scheduledTrainCount": 12,
+      "intermediateStationIds": ["ST-058"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 28.3670, "lng": 79.4304 },
+        { "lat": 26.8467, "lng": 80.9462 }
+      ]
+    },
+    {
+      "id": "RT-013", "name": "Kolkata–Patna Express Corridor",         "code": "ECR-HWH-PNBE",
+      "zone": "East Central Railway", "zoneCode": "ECR",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-013", "destinationStationCode": "PNBE",
+      "distanceKm": 531, "estimatedDurationHours": 8.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 8, "scheduledTrainCount": 11,
+      "intermediateStationIds": ["ST-044", "ST-041"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 22.7848, "lng": 86.1855 },
+        { "lat": 25.6877, "lng": 85.2091 }, { "lat": 25.6090, "lng": 85.1235 }
+      ]
+    },
+    {
+      "id": "RT-014", "name": "Chennai–Coimbatore Intercity Corridor",  "code": "SR-MAS-CBE",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-005",   "sourceStationCode": "MAS",
+      "destinationStationId": "ST-022", "destinationStationCode": "CBE",
+      "distanceKm": 497, "estimatedDurationHours": 6.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 11, "scheduledTrainCount": 15,
+      "intermediateStationIds": ["ST-059"],
+      "waypoints": [
+        { "lat": 13.0827, "lng": 80.2707 }, { "lat": 11.6643, "lng": 78.1460 },
+        { "lat": 11.0168, "lng": 76.9558 }
+      ]
+    },
+    {
+      "id": "RT-015", "name": "Delhi–Varanasi Express Corridor",        "code": "NCR-NDLS-BSB",
+      "zone": "North Central Railway","zoneCode": "NCR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-014", "destinationStationCode": "BSB",
+      "distanceKm": 786, "estimatedDurationHours": 12.0,
+      "status": "delayed", "trackType": "double", "electrified": true,
+      "activeTrainCount": 5, "scheduledTrainCount": 8,
+      "intermediateStationIds": ["ST-026", "ST-054", "ST-038"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 27.1592, "lng": 78.0001 },
+        { "lat": 27.4924, "lng": 77.6737 }, { "lat": 25.4358, "lng": 81.8463 },
+        { "lat": 25.3176, "lng": 82.9739 }
+      ]
+    },
+    {
+      "id": "RT-016", "name": "Bengaluru–Hyderabad Intercity Corridor", "code": "SCR-SBC-HYB",
+      "zone": "South Central Railway","zoneCode": "SCR",
+      "sourceStationId": "ST-006",   "sourceStationCode": "SBC",
+      "destinationStationId": "ST-007", "destinationStationCode": "HYB",
+      "distanceKm": 559, "estimatedDurationHours": 11.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 6, "scheduledTrainCount": 9,
+      "intermediateStationIds": ["ST-042"],
+      "waypoints": [
+        { "lat": 12.9783, "lng": 77.5700 }, { "lat": 15.3647, "lng": 75.1240 },
+        { "lat": 17.3850, "lng": 78.4867 }
+      ]
+    },
+    {
+      "id": "RT-017", "name": "Jaipur–Jodhpur Express Corridor",        "code": "NWR-JP-JU",
+      "zone": "North Western Railway","zoneCode": "NWR",
+      "sourceStationId": "ST-011",   "sourceStationCode": "JP",
+      "destinationStationId": "ST-027", "destinationStationCode": "JU",
+      "distanceKm": 330, "estimatedDurationHours": 5.5,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 5, "scheduledTrainCount": 7,
+      "intermediateStationIds": ["ST-033"],
+      "waypoints": [
+        { "lat": 26.9124, "lng": 75.7873 }, { "lat": 26.4499, "lng": 74.6399 },
+        { "lat": 26.2789, "lng": 73.0243 }
+      ]
+    },
+    {
+      "id": "RT-018", "name": "Ahmedabad–Surat Intercity Corridor",     "code": "WR-ADI-ST",
+      "zone": "Western Railway",     "zoneCode": "WR",
+      "sourceStationId": "ST-009",   "sourceStationCode": "ADI",
+      "destinationStationId": "ST-028", "destinationStationCode": "ST",
+      "distanceKm": 263, "estimatedDurationHours": 3.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 14, "scheduledTrainCount": 18,
+      "intermediateStationIds": ["ST-051"],
+      "waypoints": [
+        { "lat": 23.0225, "lng": 72.5714 }, { "lat": 22.3072, "lng": 73.1812 },
+        { "lat": 21.1702, "lng": 72.8311 }
+      ]
+    },
+    {
+      "id": "RT-019", "name": "Kolkata–Bhubaneswar Duronto Corridor",   "code": "ECoR-HWH-BBS",
+      "zone": "East Coast Railway",  "zoneCode": "ECoR",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-019", "destinationStationCode": "BBS",
+      "distanceKm": 444, "estimatedDurationHours": 6.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": ["ST-045"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 22.3460, "lng": 87.3198 },
+        { "lat": 20.2961, "lng": 85.8189 }
+      ]
+    },
+    {
+      "id": "RT-020", "name": "Delhi–Chandigarh Shatabdi Corridor",     "code": "NR-NDLS-CDG",
+      "zone": "Northern Railway",    "zoneCode": "NR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-025", "destinationStationCode": "CDG",
+      "distanceKm": 249, "estimatedDurationHours": 3.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 10, "scheduledTrainCount": 14,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 30.7333, "lng": 76.7794 }
+      ]
+    },
+    {
+      "id": "RT-021", "name": "Chennai–Madurai Express Corridor",        "code": "SR-MAS-MDU",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-005",   "sourceStationCode": "MAS",
+      "destinationStationId": "ST-023", "destinationStationCode": "MDU",
+      "distanceKm": 494, "estimatedDurationHours": 8.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 9, "scheduledTrainCount": 12,
+      "intermediateStationIds": ["ST-059"],
+      "waypoints": [
+        { "lat": 13.0827, "lng": 80.2707 }, { "lat": 11.6643, "lng": 78.1460 },
+        { "lat": 9.9195, "lng": 78.1194 }
+      ]
+    },
+    {
+      "id": "RT-022", "name": "Delhi–Bhopal Shatabdi Corridor",         "code": "WCR-NDLS-BPL",
+      "zone": "West Central Railway", "zoneCode": "WCR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-017", "destinationStationCode": "BPL",
+      "distanceKm": 702, "estimatedDurationHours": 8.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": ["ST-026", "ST-055", "ST-039", "ST-053"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 27.1592, "lng": 78.0001 },
+        { "lat": 26.2183, "lng": 78.1828 }, { "lat": 23.1815, "lng": 79.9864 },
+        { "lat": 22.6183, "lng": 77.7636 }, { "lat": 23.2599, "lng": 77.4126 }
+      ]
+    },
+    {
+      "id": "RT-023", "name": "Kolkata–Guwahati Express Corridor",      "code": "NFR-HWH-GHY",
+      "zone": "Northeast Frontier Railway","zoneCode": "NFR",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-018", "destinationStationCode": "GHY",
+      "distanceKm": 1030, "estimatedDurationHours": 17.0,
+      "status": "delayed", "trackType": "single", "electrified": false,
+      "activeTrainCount": 4, "scheduledTrainCount": 6,
+      "intermediateStationIds": ["ST-013"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 25.6090, "lng": 85.1235 },
+        { "lat": 26.1445, "lng": 91.7362 }
+      ]
+    },
+    {
+      "id": "RT-024", "name": "Bengaluru–Mysuru Intercity Corridor",    "code": "SWR-SBC-MYS",
+      "zone": "South Western Railway","zoneCode": "SWR",
+      "sourceStationId": "ST-006",   "sourceStationCode": "SBC",
+      "destinationStationId": "ST-032", "destinationStationCode": "MYS",
+      "distanceKm": 139, "estimatedDurationHours": 2.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 16, "scheduledTrainCount": 20,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 12.9783, "lng": 77.5700 }, { "lat": 12.3051, "lng": 76.6551 }
+      ]
+    },
+    {
+      "id": "RT-025", "name": "Mumbai–Nagpur Vidarbha Corridor",        "code": "CR-CSMT-NGP",
+      "zone": "Central Railway",     "zoneCode": "CR",
+      "sourceStationId": "ST-003",   "sourceStationCode": "CSMT",
+      "destinationStationId": "ST-016", "destinationStationCode": "NGP",
+      "distanceKm": 837, "estimatedDurationHours": 13.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 5, "scheduledTrainCount": 8,
+      "intermediateStationIds": ["ST-056", "ST-043"],
+      "waypoints": [
+        { "lat": 18.9398, "lng": 72.8355 }, { "lat": 21.0440, "lng": 75.7892 },
+        { "lat": 20.2600, "lng": 74.4300 }, { "lat": 21.1458, "lng": 79.0882 }
+      ]
+    },
+    {
+      "id": "RT-026", "name": "Delhi–Agra Intercity Corridor",          "code": "NCR-NDLS-AGC",
+      "zone": "North Central Railway","zoneCode": "NCR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-026", "destinationStationCode": "AGC",
+      "distanceKm": 200, "estimatedDurationHours": 2.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 15, "scheduledTrainCount": 20,
+      "intermediateStationIds": ["ST-054"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 27.4924, "lng": 77.6737 },
+        { "lat": 27.1592, "lng": 78.0001 }
+      ]
+    },
+    {
+      "id": "RT-027", "name": "Hyderabad–Chennai Express Corridor",     "code": "SCR-HYB-MAS",
+      "zone": "South Central Railway","zoneCode": "SCR",
+      "sourceStationId": "ST-007",   "sourceStationCode": "HYB",
+      "destinationStationId": "ST-005", "destinationStationCode": "MAS",
+      "distanceKm": 794, "estimatedDurationHours": 13.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 5, "scheduledTrainCount": 7,
+      "intermediateStationIds": ["ST-047"],
+      "waypoints": [
+        { "lat": 17.3850, "lng": 78.4867 }, { "lat": 13.6288, "lng": 79.4192 },
+        { "lat": 13.0827, "lng": 80.2707 }
+      ]
+    },
+    {
+      "id": "RT-028", "name": "Lucknow–Varanasi Passenger Corridor",    "code": "NER-LKO-BSB",
+      "zone": "North Eastern Railway","zoneCode": "NER",
+      "sourceStationId": "ST-012",   "sourceStationCode": "LKO",
+      "destinationStationId": "ST-014", "destinationStationCode": "BSB",
+      "distanceKm": 285, "estimatedDurationHours": 5.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 8, "scheduledTrainCount": 11,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 26.8467, "lng": 80.9462 }, { "lat": 25.3176, "lng": 82.9739 }
+      ]
+    },
+    {
+      "id": "RT-029", "name": "Kolkata–Ranchi Express Corridor",        "code": "SER-HWH-RNC",
+      "zone": "South Eastern Railway","zoneCode": "SER",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-029", "destinationStationCode": "RNC",
+      "distanceKm": 451, "estimatedDurationHours": 7.0,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 6, "scheduledTrainCount": 9,
+      "intermediateStationIds": ["ST-044"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 22.7848, "lng": 86.1855 },
+        { "lat": 23.3441, "lng": 85.3096 }
+      ]
+    },
+    {
+      "id": "RT-030", "name": "Bengaluru–Kochi Express Corridor",       "code": "SR-SBC-ERS",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-006",   "sourceStationCode": "SBC",
+      "destinationStationId": "ST-024", "destinationStationCode": "ERS",
+      "distanceKm": 600, "estimatedDurationHours": 10.5,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 5, "scheduledTrainCount": 8,
+      "intermediateStationIds": ["ST-060"],
+      "waypoints": [
+        { "lat": 12.9783, "lng": 77.5700 }, { "lat": 10.7669, "lng": 76.2826 },
+        { "lat": 9.9816, "lng": 76.2999 }
+      ]
+    },
+    {
+      "id": "RT-031", "name": "Bhubaneswar–Visakhapatnam Corridor",     "code": "ECoR-BBS-VSKP",
+      "zone": "East Coast Railway",  "zoneCode": "ECoR",
+      "sourceStationId": "ST-019",   "sourceStationCode": "BBS",
+      "destinationStationId": "ST-020", "destinationStationCode": "VSKP",
+      "distanceKm": 443, "estimatedDurationHours": 7.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 20.2961, "lng": 85.8189 }, { "lat": 17.7231, "lng": 83.3012 }
+      ]
+    },
+    {
+      "id": "RT-032", "name": "Delhi–Gorakhpur Rapti Sagar Corridor",   "code": "NER-NDLS-GKP",
+      "zone": "North Eastern Railway","zoneCode": "NER",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-031", "destinationStationCode": "GKP",
+      "distanceKm": 762, "estimatedDurationHours": 11.0,
+      "status": "delayed", "trackType": "double", "electrified": true,
+      "activeTrainCount": 4, "scheduledTrainCount": 7,
+      "intermediateStationIds": ["ST-012", "ST-058"],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 28.3670, "lng": 79.4304 },
+        { "lat": 26.8467, "lng": 80.9462 }, { "lat": 26.7606, "lng": 83.3732 }
+      ]
+    },
+    {
+      "id": "RT-033", "name": "Visakhapatnam–Chennai Express Corridor",  "code": "SCoR-VSKP-MAS",
+      "zone": "South Coast Railway", "zoneCode": "SCoR",
+      "sourceStationId": "ST-020",   "sourceStationCode": "VSKP",
+      "destinationStationId": "ST-005", "destinationStationCode": "MAS",
+      "distanceKm": 791, "estimatedDurationHours": 12.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 6, "scheduledTrainCount": 9,
+      "intermediateStationIds": ["ST-046"],
+      "waypoints": [
+        { "lat": 17.7231, "lng": 83.3012 }, { "lat": 16.5193, "lng": 80.6305 },
+        { "lat": 13.0827, "lng": 80.2707 }
+      ]
+    },
+    {
+      "id": "RT-034", "name": "Ahmedabad–Delhi Ashram Corridor",        "code": "WR-ADI-NDLS",
+      "zone": "Western Railway",     "zoneCode": "WR",
+      "sourceStationId": "ST-009",   "sourceStationCode": "ADI",
+      "destinationStationId": "ST-001", "destinationStationCode": "NDLS",
+      "distanceKm": 934, "estimatedDurationHours": 12.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 7, "scheduledTrainCount": 10,
+      "intermediateStationIds": ["ST-040", "ST-011"],
+      "waypoints": [
+        { "lat": 23.0225, "lng": 72.5714 }, { "lat": 25.1760, "lng": 75.8550 },
+        { "lat": 26.9124, "lng": 75.7873 }, { "lat": 28.6419, "lng": 77.2194 }
+      ]
+    },
+    {
+      "id": "RT-035", "name": "Guwahati–Dibrugarh Express Corridor",    "code": "NFR-GHY-DBRG",
+      "zone": "Northeast Frontier Railway","zoneCode": "NFR",
+      "sourceStationId": "ST-018",   "sourceStationCode": "GHY",
+      "destinationStationId": "ST-034", "destinationStationCode": "DBRG",
+      "distanceKm": 533, "estimatedDurationHours": 9.0,
+      "status": "maintenance", "trackType": "single", "electrified": false,
+      "activeTrainCount": 2, "scheduledTrainCount": 5,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 26.1445, "lng": 91.7362 }, { "lat": 27.4728, "lng": 94.9120 }
+      ]
+    },
+    {
+      "id": "RT-036", "name": "Mumbai–Pune Suburban Corridor",          "code": "CR-LTT-PUNE",
+      "zone": "Central Railway",     "zoneCode": "CR",
+      "sourceStationId": "ST-035",   "sourceStationCode": "LTT",
+      "destinationStationId": "ST-010", "destinationStationCode": "PUNE",
+      "distanceKm": 165, "estimatedDurationHours": 2.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 22, "scheduledTrainCount": 28,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 19.0631, "lng": 72.9224 }, { "lat": 18.5284, "lng": 73.8742 }
+      ]
+    },
+    {
+      "id": "RT-037", "name": "Jaipur–Ajmer Intercity Corridor",        "code": "NWR-JP-AII",
+      "zone": "North Western Railway","zoneCode": "NWR",
+      "sourceStationId": "ST-011",   "sourceStationCode": "JP",
+      "destinationStationId": "ST-033", "destinationStationCode": "AII",
+      "distanceKm": 132, "estimatedDurationHours": 2.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 9, "scheduledTrainCount": 12,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 26.9124, "lng": 75.7873 }, { "lat": 26.4499, "lng": 74.6399 }
+      ]
+    },
+    {
+      "id": "RT-038", "name": "Pune–Solapur Passenger Corridor",        "code": "CR-PUNE-SUR",
+      "zone": "Central Railway",     "zoneCode": "CR",
+      "sourceStationId": "ST-010",   "sourceStationCode": "PUNE",
+      "destinationStationId": "ST-036", "destinationStationCode": "SUR",
+      "distanceKm": 243, "estimatedDurationHours": 4.0,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 6, "scheduledTrainCount": 8,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 18.5284, "lng": 73.8742 }, { "lat": 17.6868, "lng": 75.9052 }
+      ]
+    },
+    {
+      "id": "RT-039", "name": "Kolkata–Patna–Delhi Rajdhani Corridor",  "code": "ER-HWH-NDLS-RAJ",
+      "zone": "Eastern Railway",     "zoneCode": "ER",
+      "sourceStationId": "ST-004",   "sourceStationCode": "HWH",
+      "destinationStationId": "ST-001", "destinationStationCode": "NDLS",
+      "distanceKm": 1447, "estimatedDurationHours": 16.5,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 4, "scheduledTrainCount": 6,
+      "intermediateStationIds": ["ST-013", "ST-057", "ST-038"],
+      "waypoints": [
+        { "lat": 22.5851, "lng": 88.3426 }, { "lat": 25.6090, "lng": 85.1235 },
+        { "lat": 25.2777, "lng": 83.1165 }, { "lat": 25.4358, "lng": 81.8463 },
+        { "lat": 28.6419, "lng": 77.2194 }
+      ]
+    },
+    {
+      "id": "RT-040", "name": "Chennai–Thiruvananthapuram Corridor",    "code": "SR-MAS-TVC",
+      "zone": "Southern Railway",    "zoneCode": "SR",
+      "sourceStationId": "ST-005",   "sourceStationCode": "MAS",
+      "destinationStationId": "ST-048", "destinationStationCode": "TVC",
+      "distanceKm": 920, "estimatedDurationHours": 15.0,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 5, "scheduledTrainCount": 8,
+      "intermediateStationIds": ["ST-022", "ST-023", "ST-060", "ST-024"],
+      "waypoints": [
+        { "lat": 13.0827, "lng": 80.2707 }, { "lat": 11.0168, "lng": 76.9558 },
+        { "lat": 9.9195,  "lng": 78.1194 }, { "lat": 10.7669, "lng": 76.2826 },
+        { "lat": 9.9816,  "lng": 76.2999 }, { "lat": 8.4855,  "lng": 76.9492 }
+      ]
+    },
+    {
+      "id": "RT-041", "name": "Delhi–Dehradun Shatabdi Corridor",       "code": "NR-NDLS-DDN",
+      "zone": "Northern Railway",    "zoneCode": "NR",
+      "sourceStationId": "ST-001",   "sourceStationCode": "NDLS",
+      "destinationStationId": "ST-030", "destinationStationCode": "DDN",
+      "distanceKm": 305, "estimatedDurationHours": 4.5,
+      "status": "active", "trackType": "single", "electrified": false,
+      "activeTrainCount": 6, "scheduledTrainCount": 8,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 28.6419, "lng": 77.2194 }, { "lat": 30.3165, "lng": 78.0322 }
+      ]
+    },
+    {
+      "id": "RT-042", "name": "Secunderabad–Vijayawada Express Corridor","code": "SCoR-SC-BZA",
+      "zone": "South Coast Railway", "zoneCode": "SCoR",
+      "sourceStationId": "ST-008",   "sourceStationCode": "SC",
+      "destinationStationId": "ST-046", "destinationStationCode": "BZA",
+      "distanceKm": 290, "estimatedDurationHours": 4.0,
+      "status": "active", "trackType": "double", "electrified": true,
+      "activeTrainCount": 12, "scheduledTrainCount": 16,
+      "intermediateStationIds": [],
+      "waypoints": [
+        { "lat": 17.4399, "lng": 78.5006 }, { "lat": 16.5193, "lng": 80.6305 }
+      ]
+    }
+  ]
+}

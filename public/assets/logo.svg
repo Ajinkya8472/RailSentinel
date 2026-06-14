@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" role="img" aria-label="RailSentinel logo">
+  <defs>
+    <linearGradient id="rs-grad-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="track-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#1e40af" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Track lines -->
+  <line x1="2"  y1="38" x2="46" y2="38" stroke="url(#track-grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="2"  y1="43" x2="46" y2="43" stroke="url(#track-grad)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Sleepers -->
+  <line x1="8"  y1="36" x2="8"  y2="45" stroke="#1e40af" stroke-width="1.5" stroke-opacity="0.5"/>
+  <line x1="16" y1="36" x2="16" y2="45" stroke="#1e40af" stroke-width="1.5" stroke-opacity="0.5"/>
+  <line x1="24" y1="36" x2="24" y2="45" stroke="#1e40af" stroke-width="1.5" stroke-opacity="0.5"/>
+  <line x1="32" y1="36" x2="32" y2="45" stroke="#1e40af" stroke-width="1.5" stroke-opacity="0.5"/>
+  <line x1="40" y1="36" x2="40" y2="45" stroke="#1e40af" stroke-width="1.5" stroke-opacity="0.5"/>
+
+  <!-- Train body -->
+  <rect x="2" y="18" width="44" height="16" rx="4" fill="url(#rs-grad-light)"/>
+  <!-- Nose -->
+  <path d="M46 20 L50 28 L46 34 Z" fill="#3b82f6"/>
+  <!-- Windows -->
+  <rect x="6"  y="21" width="7" height="7" rx="1.5" fill="#fff" fill-opacity="0.85"/>
+  <rect x="16" y="21" width="7" height="7" rx="1.5" fill="#fff" fill-opacity="0.85"/>
+  <rect x="26" y="21" width="7" height="7" rx="1.5" fill="#fff" fill-opacity="0.85"/>
+  <rect x="36" y="21" width="7" height="7" rx="1.5" fill="#fff" fill-opacity="0.85"/>
+  <!-- Speed stripe -->
+  <line x1="2" y1="32" x2="46" y2="32" stroke="#60a5fa" stroke-width="1.5"/>
+  <!-- Wheels -->
+  <circle cx="12" cy="36" r="3" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1"/>
+  <circle cx="36" cy="36" r="3" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1"/>
+
+  <!-- Word mark -->
+  <text x="60" y="22" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="18" font-weight="700" fill="#1e3a8a" letter-spacing="-0.5">Rail</text>
+  <text x="97" y="22" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="18" font-weight="700" fill="url(#rs-grad-light)" letter-spacing="-0.5">Sentinel</text>
+
+  <!-- Tagline -->
+  <text x="60" y="36" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="8.5" font-weight="400" fill="#64748b" letter-spacing="0.8">OPERATIONAL INTELLIGENCE</text>
+
+  <!-- Live dot -->
+  <circle cx="232" cy="10" r="4" fill="#22c55e">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
