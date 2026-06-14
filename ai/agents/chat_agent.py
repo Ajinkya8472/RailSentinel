@@ -1,9 +1,11 @@
 # ai/agents/chat_agent.py
+# Uses Google Gemini via the new google-genai SDK
 
 import os
 import json
 import logging
-from anthropic import Anthropic
+from google import genai
+from google.genai import types
 from ai.agents.base_agent import (
     fetch_from_backend,
     current_timestamp,
@@ -15,6 +17,7 @@ logger = logging.getLogger("railsentinel.chat_agent")
 
 MAX_HISTORY_TURNS = 10   # keep last 10 turns to avoid context overflow
 
+
 def run_chat(
     operator_message: str,
     conversation_history: list,
@@ -24,7 +27,7 @@ def run_chat(
     Operator Q&A agent.
     Answers questions about active incidents, sensor readings,
     agent decisions and system status using real pipeline data.
-    Maintains multi-turn conversation history.
+    Maintains multi-turn conversation history using Gemini Chat.
     """
 
     logger.info(
@@ -44,32 +47,44 @@ def run_chat(
     # ── Trim history to avoid token overflow ───────────────────────────────────
     trimmed_history = conversation_history[-(MAX_HISTORY_TURNS * 2):]
 
-    # ── Build full messages array ──────────────────────────────────────────────
-    messages = trimmed_history + [
-        {"role": "user", "content": operator_message}
-    ]
-
-    # ── Call Claude with full conversation ────────────────────────────────────
-    api_key = os.getenv("ANTHROPIC_API_KEY")
+    # ── Set up Gemini client ───────────────────────────────────────────────────
+    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        raise EnvironmentError("ANTHROPIC_API_KEY missing from .env")
+        raise EnvironmentError("GEMINI_API_KEY missing from .env")
 
-    client = Anthropic(api_key=api_key)
+    client = genai.Client(api_key=api_key)
 
-    try:
-        response = client.messages.create(
-            model      = MODEL_NAME,
-            max_tokens = 500,
-            system     = system_prompt,
-            messages   = messages
+    # ── Convert history to Gemini format ──────────────────────────────────────
+    # Gemini history format: [Content(role="user"/"model", parts=[Part(text=...)])]
+    gemini_history = []
+    for msg in trimmed_history:
+        role = "model" if msg.get("role") == "assistant" else "user"
+        gemini_history.append(
+            types.Content(
+                role=role,
+                parts=[types.Part(text=msg.get("content", ""))]
+            )
         )
-        reply = response.content[0].text
+
+    # ── Start chat with history and send message ───────────────────────────────
+    try:
+        chat = client.chats.create(
+            model=MODEL_NAME,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                max_output_tokens=500,
+                temperature=0.2,
+            ),
+            history=gemini_history
+        )
+        response = chat.send_message(operator_message)
+        reply = response.text or ""
 
     except Exception as e:
-        logger.error(f"Chat agent Claude call failed: {str(e)}")
+        logger.error(f"Chat agent Gemini call failed: {str(e)}")
         raise
 
-    # ── Update conversation history ────────────────────────────────────────────
+    # ── Update conversation history (keep in OpenAI-style format for API compat)
     updated_history = trimmed_history + [
         {"role": "user",      "content": operator_message},
         {"role": "assistant", "content": reply}
@@ -148,7 +163,7 @@ def _fetch_relevant_context(
 def _build_system_prompt(context_data: dict) -> str:
     """
     Builds system prompt with real data injected.
-    Claude answers from this data — never invents.
+    Gemini answers from this data — never invents.
     """
 
     base = """You are the RailSentinel AI assistant for Indian Railways control room operators.

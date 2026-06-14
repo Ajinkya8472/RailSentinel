@@ -1,6 +1,8 @@
 # ai/agents/base_agent.py
+# Uses Google Gemini via the new google-genai SDK
 
-import anthropic
+from google import genai
+from google.genai import types
 import os
 import json
 import sqlite3
@@ -20,7 +22,7 @@ BASE_DIR       = Path(__file__).resolve().parent.parent
 PROMPTS_DIR    = BASE_DIR / "prompts"
 CONTEXT_DIR    = BASE_DIR / "context"
 DB_PATH        = BASE_DIR / "railsentinel_audit.db"
-MODEL_NAME     = "claude-sonnet-4-20250514"
+MODEL_NAME     = "gemini-2.0-flash"   # fast, capable — swap to gemini-1.5-pro for heavier tasks
 DEFAULT_TOKENS = 1000
 MAX_RETRIES    = 2
 RETRY_DELAY    = 5
@@ -91,7 +93,7 @@ def init_db():
     conn.close()
     logger.info(f"Database initialised at {DB_PATH}")
 
-# ── Core Claude API Call ───────────────────────────────────────────────────────
+# ── Core Gemini API Call ───────────────────────────────────────────────────────
 
 def call_claude(
     system_prompt,
@@ -102,26 +104,17 @@ def call_claude(
     pipeline_id=None
 ):
     """
-    Single entry point for every Claude API call in the system.
-    Every agent calls this. Nothing else calls anthropic directly.
+    Single entry point for every Gemini API call in the system.
+    Function kept as call_claude() so all existing agents work without changes.
     Returns dict: { type, content, tokens_used }
     """
 
-    api_key = os.getenv("ANTHROPIC_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        logger.error("ANTHROPIC_API_KEY not found in environment")
-        raise EnvironmentError("ANTHROPIC_API_KEY missing from .env")
+        logger.error("GEMINI_API_KEY not found in environment")
+        raise EnvironmentError("GEMINI_API_KEY missing from .env")
 
-    client = anthropic.Anthropic(api_key=api_key)
-
-    payload = {
-        "model":      MODEL_NAME,
-        "max_tokens": max_tokens,
-        "system":     system_prompt,
-        "messages":   [{"role": "user", "content": user_message}]
-    }
-    if tools:
-        payload["tools"] = tools
+    client = genai.Client(api_key=api_key)
 
     call_id    = str(uuid.uuid4())
     start_time = time.time()
@@ -130,36 +123,38 @@ def call_claude(
     while attempt < MAX_RETRIES:
         try:
             logger.debug(
-                f"Claude call → agent:{agent_name} "
+                f"Gemini call → agent:{agent_name} "
                 f"attempt:{attempt + 1} pipeline:{pipeline_id}"
             )
 
-            response = client.messages.create(**payload)
-
-            duration_ms = (time.time() - start_time) * 1000
-            tokens_used = (
-                response.usage.input_tokens +
-                response.usage.output_tokens
+            response = client.models.generate_content(
+                model=MODEL_NAME,
+                contents=user_message,
+                config=types.GenerateContentConfig(
+                    system_instruction=system_prompt,
+                    max_output_tokens=max_tokens,
+                    temperature=0.2,
+                )
             )
 
-            if response.stop_reason == "tool_use":
-                tool_block = next(
-                    (b for b in response.content if b.type == "tool_use"),
-                    None
+            duration_ms = (time.time() - start_time) * 1000
+
+            # Gemini returns usage metadata
+            try:
+                tokens_used = (
+                    response.usage_metadata.prompt_token_count +
+                    response.usage_metadata.candidates_token_count
                 )
-                result = {
-                    "type":        "tool_use",
-                    "content":     response.content,
-                    "tool_name":   tool_block.name  if tool_block else None,
-                    "tool_input":  tool_block.input if tool_block else None,
-                    "tokens_used": tokens_used
-                }
-            else:
-                result = {
-                    "type":        "text",
-                    "content":     response.content[0].text,
-                    "tokens_used": tokens_used
-                }
+            except Exception:
+                tokens_used = 0
+
+            text_content = response.text if response.text else ""
+
+            result = {
+                "type":        "text",
+                "content":     text_content,
+                "tokens_used": tokens_used
+            }
 
             _log_agent_call(
                 call_id=call_id, pipeline_id=pipeline_id,
@@ -168,69 +163,55 @@ def call_claude(
             )
 
             logger.debug(
-                f"Claude call success → tokens:{tokens_used} "
+                f"Gemini call success → tokens:{tokens_used} "
                 f"duration:{duration_ms:.0f}ms"
             )
             return result
 
-        except anthropic.RateLimitError:
+        except Exception as e:
+            err_str = str(e).lower()
             attempt += 1
-            logger.warning(
-                f"Rate limit hit — waiting {RETRY_DELAY}s "
-                f"(attempt {attempt}/{MAX_RETRIES})"
-            )
-            if attempt >= MAX_RETRIES:
+
+            if "quota" in err_str or "rate" in err_str or "429" in err_str:
+                logger.warning(
+                    f"Rate limit hit — waiting {RETRY_DELAY}s "
+                    f"(attempt {attempt}/{MAX_RETRIES})"
+                )
+                if attempt >= MAX_RETRIES:
+                    _log_agent_call(
+                        call_id=call_id, pipeline_id=pipeline_id,
+                        agent_name=agent_name, tokens_used=0,
+                        duration_ms=(time.time() - start_time) * 1000,
+                        success=False, error="RateLimitError after retries"
+                    )
+                    raise RuntimeError("Gemini rate limit exceeded after retries")
+                time.sleep(RETRY_DELAY)
+
+            elif "connect" in err_str or "network" in err_str or "unreachable" in err_str:
                 _log_agent_call(
                     call_id=call_id, pipeline_id=pipeline_id,
                     agent_name=agent_name, tokens_used=0,
                     duration_ms=(time.time() - start_time) * 1000,
-                    success=False, error="RateLimitError after retries"
+                    success=False, error=f"ConnectionError: {str(e)}"
                 )
-                raise RuntimeError(
-                    "Claude rate limit exceeded after retries"
+                logger.error(f"Gemini API unreachable: {str(e)}")
+                raise ConnectionError(f"Cannot reach Gemini API: {str(e)}")
+
+            else:
+                _log_agent_call(
+                    call_id=call_id, pipeline_id=pipeline_id,
+                    agent_name=agent_name, tokens_used=0,
+                    duration_ms=(time.time() - start_time) * 1000,
+                    success=False, error=f"Unexpected: {str(e)}"
                 )
-            time.sleep(RETRY_DELAY)
-
-        except anthropic.APIConnectionError as e:
-            _log_agent_call(
-                call_id=call_id, pipeline_id=pipeline_id,
-                agent_name=agent_name, tokens_used=0,
-                duration_ms=(time.time() - start_time) * 1000,
-                success=False, error=f"ConnectionError: {str(e)}"
-            )
-            logger.error(f"Claude API unreachable: {str(e)}")
-            raise ConnectionError(f"Cannot reach Claude API: {str(e)}")
-
-        except anthropic.APIStatusError as e:
-            _log_agent_call(
-                call_id=call_id, pipeline_id=pipeline_id,
-                agent_name=agent_name, tokens_used=0,
-                duration_ms=(time.time() - start_time) * 1000,
-                success=False,
-                error=f"StatusError:{e.status_code} {e.message}"
-            )
-            logger.error(
-                f"Claude API status error: {e.status_code} {e.message}"
-            )
-            raise RuntimeError(
-                f"Claude API error {e.status_code}: {e.message}"
-            )
-
-        except Exception as e:
-            _log_agent_call(
-                call_id=call_id, pipeline_id=pipeline_id,
-                agent_name=agent_name, tokens_used=0,
-                duration_ms=(time.time() - start_time) * 1000,
-                success=False, error=f"Unexpected: {str(e)}"
-            )
-            logger.error(f"Unexpected error in call_claude: {str(e)}")
-            raise
+                logger.error(f"Unexpected error in Gemini call: {str(e)}")
+                raise
 
 # ── JSON Parsing ───────────────────────────────────────────────────────────────
 
 def parse_json_response(raw_text):
     """
-    Safely extracts JSON from Claude's response.
+    Safely extracts JSON from Gemini's response.
     Handles markdown fences, mixed text, and malformed output.
     Returns a Python dict always — never raises.
     """
@@ -494,8 +475,6 @@ def fetch_from_backend(endpoint, params=None):
     """
     Makes a synchronous GET request to the backend.
     Returns parsed JSON dict or None on failure.
-    Note: when you move agents to async, replace with
-    httpx.AsyncClient and await.
     """
     import httpx
 
